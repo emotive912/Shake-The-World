@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="center"
+    tools:context="com.example.shakeit.VIborActivity"
+    tools:ignore="MergeRootFrame" >
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/choosing_first_mode"
+        android:textColor="@color/black_color"
+        android:textSize="40sp"
+        android:layout_above="@+id/btnSinglePlayer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="43dp" />
+
+    <Button
+        android:id="@+id/btnSinglePlayer"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/s"
+        android:gravity="center"
+        android:text="@string/StrSinglePlayer"
+        android:textSize="25sp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/btnMultiPlayer"
+        android:layout_alignStart="@+id/btnMultiPlayer" />
+    <Button
+        android:id="@+id/btnMultiPlayer"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/s"
+        android:gravity="center"
+        android:text="@string/StrMultiPlayer"
+        android:textSize="25sp"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/btnSinglePlayer"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
+</RelativeLayout>
+
