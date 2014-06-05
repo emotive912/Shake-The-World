@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.emotive.smolguparser.shaketheworld.shakeit.SplashActivity"
+            android:name=".SplashActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
             <intent-filter>
@@ -18,33 +18,39 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.emotive.smolguparser.shaketheworld.shakeit.StartScreen"
+            android:name=".StartScreen"
             android:label="@string/title_activity_start_screen"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-            android:screenOrientation="portrait">
-        </activity>
-
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
-            android:name="com.emotive.smolguparser.shaketheworld.shakeit.StatisticActivity"
+            android:name=".StatisticActivity"
             android:label="@string/title_activity_statistic"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
-            android:name="com.emotive.smolguparser.shaketheworld.shakeit.ChooseMode"
+            android:name=".ChooseMode"
             android:label="@string/title_activity_choose_mode"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
-            android:name="com.emotive.smolguparser.shaketheworld.shakeit.GameModes"
+            android:name=".GameModes"
             android:label="@string/title_activity_game_modes"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+        <activity
+            android:name=".MultiPlayer"
+            android:label="@string/title_activity_multi_player"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+        <activity
+            android:name=".GameActivity"
+            android:label="@string/title_activity_game"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.emotive.smolguparser.shaketheworld.shakeit.MultiPlayer"
-            android:label="@string/title_activity_multi_player"
+            android:name=".FInishActivity"
+            android:label="@string/title_activity_finish"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
             android:screenOrientation="portrait">
         </activity>
@@ -54,12 +60,12 @@
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true"
-        android:smallScreens="true" />
+        android:smallScreens="true"
+        android:resizeable="true" />
 
     <uses-sdk
         android:maxSdkVersion="19"
         android:minSdkVersion="10"
         android:targetSdkVersion="19" />
-
 
 </manifest>
