@@ -26,7 +26,7 @@
     <string name="title_activity_finish">FinishActivity</string>
     <string name="end_title">Поздравляем!\nВы потрясли мир с \n результатом\n </string>
     <string name="finish">Ваш результат</string>
-    <string name="share">Поделитесь результатом</string>
+    <string name="share">Делиться \n результатом</string>
     <string name="stop_button">Стоп</string>
     <string name="title_activity_game_activity2">GameActivity2</string>
     <string name="title_activity_game_activity3">GameActivity3</string>

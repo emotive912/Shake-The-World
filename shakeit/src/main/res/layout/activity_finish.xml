@@ -4,167 +4,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context="com.example.shakeit.FinishActivity"
+    tools:context="com.emotive.smolguparser.shaketheworld.shakeit.FInishActivity"
     tools:ignore="MergeRootFrame">
 
-    <ImageButton
-        android:id="@+id/vkButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/twitterButton"
-        android:layout_centerHorizontal="true"
-        android:maxHeight="50dp"
-        android:maxWidth="50dp"
-        android:src="@drawable/vkai" />
-
-    <ImageButton
-        android:id="@+id/facebookButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/vkButton"
-        android:layout_toRightOf="@+id/vkButton"
-        android:src="@drawable/facebooki12" />
-
-    <Button
-        android:id="@+id/buttonToStat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/background"
-        android:textSize="25dp"
-        android:text="@string/show_stat" />
-
-    <ImageButton
-        android:id="@+id/twitterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_Exit"
-        android:layout_marginBottom="15dp"
-        android:layout_toLeftOf="@+id/vkButton"
-        android:src="@drawable/twitter_iconnew1" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView5"
-        android:layout_marginTop="15dp"
-        android:text="@string/the_most_my_way"
-        android:textColor="@color/black_color"
-        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:gravity="center"
         android:text="@string/finish"
         android:textColor="@color/black_color"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="15dp"
-        android:text="@string/stamina_my"
-        android:textColor="@color/black_color"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView7"
-        android:layout_marginTop="14dp"
-        android:text="@string/the_most_great_shake"
-        android:textColor="@color/black_color"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView9"
-        android:layout_marginTop="13dp"
-        android:text="@string/kalories"
-        android:textColor="@color/black_color"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="14dp"
-        android:text="@string/the_longest"
-        android:textColor="@color/black_color"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView11"
-        android:layout_marginTop="13dp"
-        android:text="@string/time"
-        android:textColor="@color/black_color"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="14dp"
-        android:text="@string/the_whole_way"
-        android:textColor="@color/black_color"
-        android:textSize="20dp" />
+        android:textSize="40dp"
+        android:layout_marginTop="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/facebookButton"
-        android:layout_alignParentTop="true"
         android:gravity="center"
         android:text="TextView"
         android:textColor="@color/black_color"
-        android:textSize="20sp" />
-
+        android:textSize="50sp"
+        android:layout_above="@+id/buttonToStat"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="88dp" />
 
     <Button
-        android:id="@+id/button_Exit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonToStat"
-        android:layout_alignParentLeft="true"
-        android:background="@color/background"
-        android:gravity="center"
-        android:text="@string/exit"
-        android:textSize="25dp" />
-
-    <TextView
-        android:id="@+id/share_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/vkButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="11dp"
+        android:id="@+id/sharing"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
         android:gravity="center"
         android:text="@string/share"
         android:textColor="@color/black_color"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:background="@drawable/s"
+
+        android:layout_above="@+id/button_Exit"
+        android:layout_alignLeft="@+sid/buttonToStat"
+        android:layout_alignStart="@+id/buttonToStat" />
+
+    <Button
+        android:id="@+id/button_Exit"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        android:background="@drawable/s"
+        android:gravity="center"
+        android:text="@string/exit"
+        android:textSize="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/buttonToStat"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        android:background="@drawable/s"
+        android:textSize="25dp"
+        android:text="@string/show_stat"
+        android:layout_above="@+id/sharing"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
