@@ -28,9 +28,8 @@
         android:text="TextView"
         android:textColor="@color/black_color"
         android:textSize="50sp"
-        android:layout_above="@+id/buttonToStat"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="88dp" />
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/sharing"
@@ -42,19 +41,19 @@
         android:textSize="20sp"
         android:background="@drawable/s"
 
-        android:layout_above="@+id/button_Exit"
-        android:layout_alignLeft="@+sid/buttonToStat"
+        android:layout_below="@+id/buttonToStat"
+        android:layout_alignLeft="@+id/buttonToStat"
         android:layout_alignStart="@+id/buttonToStat" />
 
     <Button
-        android:id="@+id/button_Exit"
+        android:id="@+id/button_onemore"
         android:layout_width="230dp"
         android:layout_height="100dp"
         android:background="@drawable/s"
         android:gravity="center"
-        android:text="@string/exit"
+        android:text="@string/one_more"
         android:textSize="25dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/sharing"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -64,7 +63,7 @@
         android:background="@drawable/s"
         android:textSize="25dp"
         android:text="@string/show_stat"
-        android:layout_above="@+id/sharing"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
 

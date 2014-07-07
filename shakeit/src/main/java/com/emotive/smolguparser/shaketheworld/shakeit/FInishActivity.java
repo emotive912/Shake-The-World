@@ -1,9 +1,13 @@
 package com.emotive.smolguparser.shaketheworld.shakeit;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class FInishActivity extends Activity {
@@ -12,6 +16,45 @@ public class FInishActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
+        Intent i = getIntent();
+        TextView tvresult = (TextView) findViewById(R.id.textResult);
+
+        String count = i.getStringExtra("count");
+        tvresult.setText(count);
+        AllButtons();
+    }
+
+    public void AllButtons() {
+        Button btnstat = (Button) findViewById(R.id.buttonToStat);
+        Button btntoShare = (Button) findViewById(R.id.sharing);
+        Button onemorebtn = (Button) findViewById(R.id.button_onemore);
+
+        btnstat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent b = new Intent(getApplicationContext(), StatisticActivity.class);
+                startActivity(b);
+            }
+        });
+
+        btntoShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Мои результаты в #shake_the_world");
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+            }
+        });
+
+        onemorebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent c = new Intent(getApplicationContext(), GameActivity.class);
+                startActivity(c);
+            }
+        });
     }
 
 
@@ -32,5 +75,12 @@ public class FInishActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onBackPressed() {
+        //never return the true
+        Intent a = new Intent(getApplicationContext(), StartScreen.class);
+        startActivity(a);
+
     }
 }

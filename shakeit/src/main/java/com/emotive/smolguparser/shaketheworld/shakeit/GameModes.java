@@ -12,6 +12,7 @@ import android.widget.Button;
 
 public class GameModes extends Activity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +36,12 @@ public class GameModes extends Activity {
                 startActivity(inte);
             }
         });
-         /*btn2.setOnClickListener(new View.OnClickListener() {
+        btn2.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent inte2 = new Intent(getApplicationContext(), GameActivity2.class);
+                Intent inte2 = new Intent(getApplicationContext(), Game_activity2.class);
                 startActivity(inte2);
             }
         });
@@ -52,7 +53,7 @@ public class GameModes extends Activity {
                 Intent inte3 = new Intent(getApplicationContext(),GameActivity3.class);
                 startActivity(inte3);
             }
-        }); */
+        });
     }
 
     @Override

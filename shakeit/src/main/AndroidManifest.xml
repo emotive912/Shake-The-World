@@ -21,57 +21,55 @@
             android:name=".StartScreen"
             android:label="@string/title_activity_start_screen"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-
-        </activity>
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
             android:name=".StatisticActivity"
             android:label="@string/title_activity_statistic"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-
-        </activity>
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
             android:name=".ChooseMode"
             android:label="@string/title_activity_choose_mode"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-
-        </activity>
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
             android:name=".GameModes"
             android:label="@string/title_activity_game_modes"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-
-        </activity>
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
             android:name=".MultiPlayer"
             android:label="@string/title_activity_multi_player"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-
-        </activity>
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
             android:name=".GameActivity"
             android:label="@string/title_activity_game"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
             android:name=".FInishActivity"
             android:label="@string/title_activity_finish"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+        <activity
+            android:name=".Game_activity2"
+            android:label="@string/title_activity_game_activity2"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+        <activity
+            android:name=".GameActivity3"
+            android:label="@string/title_activity_game_activity3"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
     </application>
 
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true"
-        android:smallScreens="true"
-        android:resizeable="true" />
+        android:resizeable="true"
+        android:smallScreens="true" />
 
     <uses-sdk
         android:maxSdkVersion="19"

@@ -64,5 +64,6 @@
     <string name="title_activity_choose_mode">ChooseMode</string>
     <string name="title_activity_game_modes">GameModes</string>
     <string name="title_activity_multi_player">MultiPlayer</string>
+    <string name="one_more">Еще раз!</string>
 
 </resources>
