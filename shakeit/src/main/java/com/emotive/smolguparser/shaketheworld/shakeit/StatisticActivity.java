@@ -11,6 +11,10 @@ import android.widget.Button;
 
 public class StatisticActivity extends Activity {
 
+    public float strongest_shake;
+    public float whole_way;
+    public int shakes;
+    public int played_games;
 
 
     @Override
@@ -22,6 +26,7 @@ public class StatisticActivity extends Activity {
 
     private void initializeForm() {
         Button btnShare =  (Button)findViewById(R.id.sharing_button);
+        Button btnMenu = (Button) findViewById(R.id.menu);
         btnShare.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -33,9 +38,19 @@ public class StatisticActivity extends Activity {
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Мои результаты в #shake_the_world");
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
+
             }
 
 
+        });
+
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tomenu = new Intent(getApplicationContext(), StartScreen.class);
+                startActivity(tomenu);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
         });
     }
 
@@ -57,5 +72,11 @@ public class StatisticActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

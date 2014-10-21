@@ -3,31 +3,160 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/background"
     tools:context="com.example.shakeit.StatisticActivity"
-    tools:ignore="MergeRootFrame" >
+    tools:ignore="MergeRootFrame">
 
     <TextView
         android:id="@+id/labl_stat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/StrStatistic"
+        android:text="@string/statistic"
         android:textColor="@color/black_color"
-        android:textSize="35sp" />
+        android:textSize="40sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="73dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed" />
 
     <Button
         android:id="@+id/sharing_button"
         android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:text="@string/share"
         android:textColor="@color/black_color"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_marginBottom="88dp"
-        android:background="@drawable/s"
+        android:background="@drawable/cloud"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/the_best_force_shake"
+        android:id="@+id/textView"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25dp"
+        android:layout_below="@+id/labl_stat"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/textView2"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25dp"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toRightOf="@+id/sharing_button"
+        android:layout_toEndOf="@+id/sharing_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/whole_way"
+        android:id="@+id/textView3"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/textView4"
+        android:layout_toEndOf="@+id/sharing_button"
+        android:textColor="@color/black_color"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/played_games"
+        android:id="@+id/textView5"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25dp"
+        android:layout_below="@+id/textView9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/textView6"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25dp"
+        android:layout_alignTop="@+id/textView5"
+        android:layout_alignLeft="@+id/textView9"
+        android:layout_alignStart="@+id/textView9" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shakeov"
+        android:id="@+id/textView7"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25dp"
+        android:layout_alignTop="@+id/textView9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/textView9"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="@string/main_menu"
+        android:id="@+id/menu"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:layout_alignRight="@+id/sharing_button"
+        android:layout_alignEnd="@+id/sharing_button"
+        android:background="@drawable/cloud"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25sp" />
 
 
 </RelativeLayout>

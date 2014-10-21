@@ -34,6 +34,7 @@ public class FInishActivity extends Activity {
             public void onClick(View v) {
                 Intent b = new Intent(getApplicationContext(), StatisticActivity.class);
                 startActivity(b);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -51,8 +52,9 @@ public class FInishActivity extends Activity {
         onemorebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent c = new Intent(getApplicationContext(), GameActivity.class);
+                Intent c = new Intent(getApplicationContext(), GameModes.class);
                 startActivity(c);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }
@@ -81,6 +83,7 @@ public class FInishActivity extends Activity {
         //never return the true
         Intent a = new Intent(getApplicationContext(), StartScreen.class);
         startActivity(a);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
     }
 }

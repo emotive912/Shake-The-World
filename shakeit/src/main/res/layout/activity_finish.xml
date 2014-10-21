@@ -3,7 +3,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/background"
     tools:context="com.emotive.smolguparser.shaketheworld.shakeit.FInishActivity"
     tools:ignore="MergeRootFrame">
 
@@ -13,12 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/finish"
+        android:text="@string/result"
         android:textColor="@color/black_color"
         android:textSize="40dp"
         android:layout_marginTop="45dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed" />
 
     <TextView
         android:id="@+id/textResult"
@@ -29,42 +31,46 @@
         android:textColor="@color/black_color"
         android:textSize="50sp"
         android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed" />
 
     <Button
         android:id="@+id/sharing"
-        android:layout_width="230dp"
-        android:layout_height="100dp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:text="@string/share"
         android:textColor="@color/black_color"
-        android:textSize="20sp"
-        android:background="@drawable/s"
-
+        android:textSize="25sp"
+        android:background="@drawable/pic"
         android:layout_below="@+id/buttonToStat"
         android:layout_alignLeft="@+id/buttonToStat"
-        android:layout_alignStart="@+id/buttonToStat" />
+        android:layout_alignStart="@+id/buttonToStat"
+        android:fontFamily="sans-serif-condensed" />
 
     <Button
         android:id="@+id/button_onemore"
-        android:layout_width="230dp"
-        android:layout_height="100dp"
-        android:background="@drawable/s"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/pic"
         android:gravity="center"
         android:text="@string/one_more"
         android:textSize="25dp"
         android:layout_below="@+id/sharing"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed" />
 
     <Button
         android:id="@+id/buttonToStat"
-        android:layout_width="230dp"
-        android:layout_height="100dp"
-        android:background="@drawable/s"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/pic"
         android:textSize="25dp"
-        android:text="@string/show_stat"
+        android:text="@string/statistic"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed" />
 
 
 </RelativeLayout>

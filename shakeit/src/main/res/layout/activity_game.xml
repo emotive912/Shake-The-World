@@ -3,7 +3,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/background"
     tools:context="com.example.shakeit.GameActivity"
     tools:ignore="MergeRootFrame">
 
@@ -18,7 +18,8 @@
         android:text="0"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/black_color"
-        android:textSize="80dp" />
+        android:textSize="80dp"
+        android:fontFamily="sans-serif-condensed" />
 
     <TextView
         android:id="@+id/textResult"
@@ -26,11 +27,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="30dp"
-        android:text="@string/launch"
+        android:text="@string/shake"
         android:textColor="@color/black_color"
         android:textSize="40dp"
         android:layout_centerInParent="true"
-        android:gravity="center" />
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button_stop"
@@ -42,7 +45,23 @@
         android:text="@string/stop_button"
         android:gravity="center"
         android:layout_centerInParent="true"
-        android:background="@drawable/s" />
+        android:background="@drawable/pic"
+        android:fontFamily="sans-serif-condensed" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/game1_desc"
+        android:id="@+id/textView"
+        android:textColor="@color/black_color"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_above="@+id/button_stop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="27dp" />
 
 </RelativeLayout> 
     

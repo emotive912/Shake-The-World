@@ -3,21 +3,27 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/background"
     tools:context="com.example.shakeit.SplashActivity"
-    tools:ignore="MergeRootFrame" >
+    tools:ignore="MergeRootFrame">
 
     <TextView
+        android:id="@+id/entry_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="@string/shake_the_world"
         android:textSize="40dp"
         android:textStyle="bold"
         android:gravity="center"
-        android:fontFamily="considered-bold-italic"/>
+        android:textColor="@color/black_color"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_above="@+id/Shaker_pic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/Shaker_pic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon"

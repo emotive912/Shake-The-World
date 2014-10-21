@@ -20,7 +20,7 @@ public class GameActivity3 extends Activity {
     private static final String TAG = "ShakeActivity";
     private static final int SHAKE_SENSITIVITY = 15;
     public int j = 4;
-    public int i = 30, k = 0;
+    public int i = 100, k = 0;
 
     private Timer myTimer;
     private SensorManager sensorManager;
@@ -122,9 +122,10 @@ public class GameActivity3 extends Activity {
         Intent intent = new Intent(getApplicationContext(), FInishActivity.class);
         intent.putExtra("count", tv.getText().toString());
         startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void onBackPressed() {
-        //do nothig here
+        //do nothing here
     }
 }

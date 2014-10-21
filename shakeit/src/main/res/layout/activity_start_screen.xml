@@ -3,7 +3,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/background"
     tools:context="com.example.shakeit.StartScreen"
     tools:ignore="MergeRootFrame" >
 
@@ -12,35 +12,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/StrShakeIT"
+        android:text="@string/shake_the_world"
         android:textColor="@color/black_color"
-        android:textSize="40sp"
+        android:textSize="40dp"
         android:textStyle="bold"
         android:layout_above="@+id/btnPlay"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="86dp" />
+        android:layout_marginBottom="86dp"
+        android:fontFamily="sans-serif-condensed" />
 
     <Button
         android:id="@+id/btnPlay"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:background="@drawable/s"
+        android:background="@drawable/pic"
         android:gravity="center"
-        android:text="@string/first_button"
+        android:text="@string/play"
         android:textSize="25dp"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed" />
 
     <Button
         android:id="@+id/btnStatistic"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:background="@drawable/s"
-        android:text="@string/StrStatistic"
+        android:background="@drawable/pic"
+        android:text="@string/statistic"
         android:textSize="25dp"
         android:layout_marginTop="72dp"
         android:layout_below="@+id/btnPlay"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed" />
 
 </RelativeLayout>

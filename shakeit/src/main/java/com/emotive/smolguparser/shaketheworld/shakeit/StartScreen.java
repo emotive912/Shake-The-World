@@ -14,9 +14,10 @@ import android.widget.Button;
 
 public class StartScreen extends Activity {
 
-    String exit_dialog = "Вы хотите выйти?";
-    String exit = "Выйти";
-    String cancel = "Отмена";
+  /* private final String exit_dialog = getResources().getString(R.string.exit_mes);
+   private final  String exit = getResources().getString(R.string.dialog_exit);
+   private final String cancel = getResources().getString(R.string.dialog_playAgain);*/
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,9 @@ public class StartScreen extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent i  = new Intent(getApplicationContext(), ChooseMode.class);
+                Intent i = new Intent(getApplicationContext(), GameModes.class);
                 startActivity(i);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -45,12 +47,13 @@ public class StartScreen extends Activity {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent(getApplicationContext(), StatisticActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }
 
-    public void onBackPressed(){
-        new AlertDialog.Builder(this).setTitle(exit_dialog).setMessage(exit_dialog).setPositiveButton(exit, new DialogInterface.OnClickListener() {
+    public void onBackPressed() {
+        new AlertDialog.Builder(this).setTitle(R.string.dialog_exit).setMessage(R.string.exit_mes).setPositiveButton(R.string.dialog_exit, new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -60,7 +63,7 @@ public class StartScreen extends Activity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
-        }).setNegativeButton(cancel, new DialogInterface.OnClickListener() {
+        }).setNegativeButton(R.string.dialog_playAgain, new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -89,4 +92,18 @@ public class StartScreen extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+  /*  @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            DecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+        }
+    } */
 }

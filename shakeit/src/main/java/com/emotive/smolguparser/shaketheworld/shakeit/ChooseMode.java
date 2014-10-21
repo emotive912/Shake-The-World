@@ -25,14 +25,17 @@ public class ChooseMode extends Activity {
             public void onClick(View arg0) {
                 Intent intent = new Intent(getApplicationContext(), GameModes.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
         btnMultiPlayer.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent intent = new Intent(getApplicationContext(), MultiPlayer.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
+
     }
 
 
@@ -56,4 +59,8 @@ public class ChooseMode extends Activity {
         }
 */
 
+    @Override
+    public void onBackPressed() {
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
 }

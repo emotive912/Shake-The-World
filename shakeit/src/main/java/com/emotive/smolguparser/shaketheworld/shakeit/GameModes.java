@@ -34,6 +34,7 @@ public class GameModes extends Activity {
                 // TODO Auto-generated method stub
                 Intent inte = new Intent(getApplicationContext(), GameActivity.class);
                 startActivity(inte);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +44,7 @@ public class GameModes extends Activity {
                 // TODO Auto-generated method stub
                 Intent inte2 = new Intent(getApplicationContext(), Game_activity2.class);
                 startActivity(inte2);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
@@ -50,8 +52,9 @@ public class GameModes extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent inte3 = new Intent(getApplicationContext(),GameActivity3.class);
+                Intent inte3 = new Intent(getApplicationContext(), GameActivity3.class);
                 startActivity(inte3);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }
@@ -73,5 +76,11 @@ public class GameModes extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, ChooseMode.class));
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

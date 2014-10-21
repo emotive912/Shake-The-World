@@ -178,6 +178,7 @@ public class GameActivity extends Activity {
                 finish.putExtra("max_force", maxForse);
                 finish.putExtra("time", timeFG);
                 startActivity(finish);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }

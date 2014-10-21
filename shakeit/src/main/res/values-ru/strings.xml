@@ -1,0 +1,44 @@
+<resources>
+
+    <string name="action_settings">Настройки</string>
+    <string name="all_shakes">Всего Shake-ов</string>
+    <string name="choosing_game_mode">Выбери режим игры</string>
+    <string name="dialog_exit">Выход</string>
+    <string name="dialog_playAgain">Играть снова</string>
+    <string name="dialog_question">Вы хотите выйти или играть снова?</string>
+    <string name="endurance">Выносливость</string>
+    <string name="exit_mes">Вы действительно хотите выйти?</string>
+    <string name="force">Сил приложенно</string>
+    <string name="game_mode">Выбери режим</string>
+    <string name="greetings">Поздравляем! Вы набрали</string>
+    <string name="main_menu">Главное меню</string>
+    <string name="metrov">М</string>
+    <string name="multi">Двое</string>
+    <string name="nutonov">Ньютонов</string>
+    <string name="one_more">Снова</string>
+    <string name="play">Играть</string>
+    <string name="played_games">Сыграно игр</string>
+    <string name="result">Ваш результат</string>
+    <string name="seconds">сек</string>
+    <string name="shake">Shake</string>
+    <string name="shake_the_world">Shake The World</string>
+    <string name="shakeov">Shake-ов</string>
+    <string name="share">Поделиться</string>
+    <string name="single">Один</string>
+    <string name="speed">Скорость</string>
+    <string name="start">Старт</string>
+    <string name="statistic">Статистика</string>
+    <string name="stop_button">Стоп</string>
+    <string name="the_best_force_shake">Сильнейший Shake</string>
+    <string name="time">Время</string>
+    <string name="time_spend">Время</string>
+    <string name="whole_way">Пройденный путь</string>
+    <string name="ready">Готовься</string>
+    <string name="set">Готовься</string>
+    <string name="my_result">Мой результат в #shake_the_world</string>
+    <string name="game1_desc">Просто Shake. Когда устанешь,нажми</string>
+    <string name="game2_desc">У тебя 50 секунд.Shake\'ай как можно больше</string>
+    <string name="game3_desc">Тебе нужно Shake\'нуть 100раз. Как быстро ты это сделаешь?</string>
+
+
+</resources>

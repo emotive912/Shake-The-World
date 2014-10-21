@@ -3,7 +3,6 @@ package com.emotive.smolguparser.shaketheworld.shakeit;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -21,7 +20,7 @@ public class Game_activity2 extends Activity {
     private static final String TAG = "ShakeActivity";
     private static final int SHAKE_SENSITIVITY = 15;
     public int i;
-    public int j = 4;
+    public int j = 5;
 
 
     private SensorManager sensorManager;
@@ -94,20 +93,23 @@ public class Game_activity2 extends Activity {
     protected void onStart() {
         super.onStart();
 
-        new CountDownTimer(34000, 1000) {
+        new CountDownTimer(55000, 1000) {
             TextView tv_to_timer = (TextView) findViewById(R.id.textResult);
             TextView counte = (TextView) findViewById(R.id.count);
 
             public void onTick(long count) {
 
+                if (j == 5) {
+                    counte.setText(R.string.ready);
+                }
                 if (j == 4) {
-                    counte.setText("Настарт");
+                    counte.setText(R.string.set);
                 }
                 if (j == 3) {
-                    counte.setText("Внимание");
+                    counte.setText(R.string.shake);
                 }
                 if (j == 2) {
-                    counte.setText("Марш!");
+                    counte.setText("0");
                 }
                 if (j < 2) {
                     tv_to_timer.setText("" + count / 1000);
@@ -120,6 +122,7 @@ public class Game_activity2 extends Activity {
                 Intent finish = new Intent(getApplicationContext(), FInishActivity.class);
                 finish.putExtra("count", tv.getText().toString());
                 startActivity(finish);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             }
         }.start();
@@ -127,6 +130,6 @@ public class Game_activity2 extends Activity {
     }
 
     public void onBackPressed() {
-        super.onBackPressed();
+        //do nothing here
     }
 }
