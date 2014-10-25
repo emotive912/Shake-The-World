@@ -29,6 +29,7 @@ public class StartScreen extends Activity {
     private void initForm() {
         Button btnPlay = (Button)findViewById(R.id.btnPlay);
         Button btnStatistic = (Button)findViewById(R.id.btnStatistic);
+        Button button_to_set = (Button) findViewById(R.id.button_settings);
         btnPlay.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -50,6 +51,17 @@ public class StartScreen extends Activity {
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
+
+
+        button_to_set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent inte  = new Intent(getApplicationContext(),SettingsActivity.class);
+                startActivity(inte);
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+            }
+        });
+
     }
 
     public void onBackPressed() {

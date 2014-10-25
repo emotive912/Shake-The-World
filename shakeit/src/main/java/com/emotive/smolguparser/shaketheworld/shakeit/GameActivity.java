@@ -22,7 +22,7 @@ import java.util.Timer;
 
 public class GameActivity extends Activity {
     private static final String TAG = "ShakeActivity";
-    private static final int SHAKE_SENSITIVITY = 15;
+
     public int j = 4;
     public int i, k = 0; //k-our timer
 
@@ -41,6 +41,8 @@ public class GameActivity extends Activity {
     private SensorManager sensorManager;
     private float accel = SensorManager.GRAVITY_EARTH;
     private float accelPrevious = SensorManager.GRAVITY_EARTH;
+
+    SettingsActivity st = new SettingsActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +90,7 @@ public class GameActivity extends Activity {
             float z = sensorEvent.values[2];
             accelPrevious = accel;
             accel = (float) Math.sqrt((double) (x * x + y * y + z * z));
-            if (accel - accelPrevious > SHAKE_SENSITIVITY) {
+            if (accel - accelPrevious > st.SHAKE_SENSIVITY_SETTING) {
 
                 TextView tv = (TextView) findViewById(R.id.count);
 
@@ -184,22 +186,5 @@ public class GameActivity extends Activity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.game, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

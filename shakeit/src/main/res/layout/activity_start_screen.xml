@@ -41,9 +41,22 @@
         android:background="@drawable/pic"
         android:text="@string/statistic"
         android:textSize="25dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="63dp"
+        android:fontFamily="sans-serif-condensed"
         android:layout_below="@+id/btnPlay"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif-condensed" />
+        android:layout_alignLeft="@+id/btnPlay"
+        android:layout_alignStart="@+id/btnPlay" />
 
+        <Button
+            android:id="@+id/button_settings"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:background="@drawable/cloud"
+            android:layout_below="@+id/btnStatistic"
+            android:layout_alignLeft="@+id/btnStatistic"
+            android:layout_alignStart="@+id/btnStatistic"
+            android:layout_marginTop="31dp"
+            android:text="@string/settings"
+            android:textSize="25dp"
+            android:fontFamily="sans-serif-condensed"/>
 </RelativeLayout>

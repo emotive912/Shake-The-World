@@ -80,7 +80,7 @@ public class GameModes extends Activity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this, ChooseMode.class));
+        startActivity(new Intent(this, StartScreen.class));
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

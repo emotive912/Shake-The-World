@@ -40,4 +40,11 @@
     <string name="game1_desc">Just shake it.\n When you feel tired,\n just click</string>
     <string name="game2_desc">You have 50 seconds.\nShake much as you can</string>
     <string name="game3_desc">You have to shake 100 times.\nHow fast you can do that?</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="settings">Settings</string>
+
+
+    <string name = "text_in_settings">For correct work of your application \nyou should made a acceleration calibration.\nClick on button "Start"\nand shake your phone until accelerometer will be ready for work. </string>
+
 </resources>
