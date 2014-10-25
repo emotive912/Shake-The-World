@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 
 public class SettingsActivity extends Activity {
-
+int a;
     public int SHAKE_SENSIVITY_SETTING = 25,SHAKE_SENSIVITY;
     public boolean check = true;
     Vibrator vibro;
