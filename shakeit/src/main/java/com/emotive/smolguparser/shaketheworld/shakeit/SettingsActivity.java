@@ -39,6 +39,8 @@ public class SettingsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        Toast.makeText(getApplicationContext(),"Activity has loaded",Toast.LENGTH_SHORT).show();
+
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
             pict = (ImageView) findViewById(R.id.pic);
@@ -111,4 +113,7 @@ public class SettingsActivity extends Activity {
 
         }
     };
+
+
+
 }
