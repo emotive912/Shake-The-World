@@ -83,12 +83,12 @@ public class GameActivity3 extends Activity {
                 sensorListener,
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
-      try{
+
         if (mSettings.contains(SP_SHAKE_SENSIVITY)) {
             SHAKE_SENSITIVITY = Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY, ""));
         }
-        }
-      catch (Exception e){}///try
+
+
     }
 
     @Override
