@@ -22,6 +22,7 @@
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed" />
 
+
     <Button
         android:id="@+id/sharing_button"
         android:layout_width="200dp"
@@ -45,10 +46,10 @@
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
         android:textSize="25dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/labl_stat"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp" />
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -68,14 +69,14 @@
         android:layout_height="wrap_content"
         android:text="@string/whole_way"
         android:id="@+id/textView3"
-        android:layout_marginTop="36dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:layout_above="@+id/textView7"
+        android:layout_alignLeft="@+id/sharing_button"
+        android:layout_alignStart="@+id/sharing_button"
+        android:layout_marginBottom="21dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -99,10 +100,10 @@
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
         android:textSize="25dp"
-        android:layout_below="@+id/textView9"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp" />
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/textView7"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -126,9 +127,9 @@
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
         android:textSize="25dp"
-        android:layout_alignTop="@+id/textView9"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -149,13 +150,13 @@
         android:text="@string/main_menu"
         android:id="@+id/menu"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/textView7"
         android:layout_alignRight="@+id/sharing_button"
         android:layout_alignEnd="@+id/sharing_button"
         android:background="@drawable/cloud"
         android:fontFamily="sans-serif-condensed"
         android:textSize="25sp"
-        android:layout_toRightOf="@+id/textView7" />
+        android:layout_alignLeft="@+id/sharing_button"
+        android:layout_alignStart="@+id/sharing_button" />
 
 
 </RelativeLayout>
