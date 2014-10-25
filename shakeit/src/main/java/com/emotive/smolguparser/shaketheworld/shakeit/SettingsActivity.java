@@ -122,8 +122,6 @@ public class SettingsActivity extends Activity {
             //TextView tv = (TextView)findViewById(R.id.tv_title_settings);
            SHAKE_SENSIVITY= Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY,""));
 
-            ///adfbksdhjfsdlkjfjka
-            int a=1;
         }
     }
 }
