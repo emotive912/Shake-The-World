@@ -1,6 +1,7 @@
 package com.emotive.smolguparser.shaketheworld.shakeit;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,7 +27,7 @@ public class GameActivity extends Activity {
     public int j = 4;
     public int i, k = 0; //k-our timer
 
-    int gameForse = 0;
+    int SHAKE_SENSITIVITY;
     double gameF = 0;
     double F = 0;
     int statForse = 0;
@@ -42,7 +43,13 @@ public class GameActivity extends Activity {
     private float accel = SensorManager.GRAVITY_EARTH;
     private float accelPrevious = SensorManager.GRAVITY_EARTH;
 
-    SettingsActivity st = new SettingsActivity();
+    ///////////////SHARED PREFERENCE/////////////
+    public static final String APP_PREFERENCES = "My Settings";
+    public static String SP_SHAKE_SENSIVITY = "";
+    SharedPreferences mSettings;
+////////////////////////////////////////////////////////////////////////////////////////
+
+    SettingsActivity setAct = new SettingsActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +64,7 @@ public class GameActivity extends Activity {
                 SensorManager.SENSOR_DELAY_NORMAL);
         i = 0;
         //styles to text
-
+        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);//
 
     }
 
@@ -69,14 +76,17 @@ public class GameActivity extends Activity {
                 sensorListener,
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
+        if (mSettings.contains(SP_SHAKE_SENSIVITY)) {
+            SHAKE_SENSITIVITY = Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY, ""));
+        }
     }
+        @Override
+        protected void onStop () {
+            sensorManager.unregisterListener(sensorListener);
 
-    @Override
-    protected void onStop() {
-        sensorManager.unregisterListener(sensorListener);
+            super.onStop();
+        }
 
-        super.onStop();
-    }
 
     protected void onShake() {
         Log.d(TAG, "SHAKE");
@@ -90,7 +100,7 @@ public class GameActivity extends Activity {
             float z = sensorEvent.values[2];
             accelPrevious = accel;
             accel = (float) Math.sqrt((double) (x * x + y * y + z * z));
-            if (accel - accelPrevious > st.SHAKE_SENSIVITY_SETTING) {
+            if (accel - accelPrevious > SHAKE_SENSITIVITY) {
 
                 TextView tv = (TextView) findViewById(R.id.count);
 

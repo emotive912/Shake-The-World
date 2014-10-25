@@ -6,6 +6,7 @@ import java.util.TimerTask;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -18,7 +19,7 @@ import android.widget.TextView;
 public class GameActivity3 extends Activity {
 
     private static final String TAG = "ShakeActivity";
-    private static final int SHAKE_SENSITIVITY = 15;
+    private static  int SHAKE_SENSITIVITY ;
     public int j = 4;
     public int i = 100, k = 0;
 
@@ -26,6 +27,12 @@ public class GameActivity3 extends Activity {
     private SensorManager sensorManager;
     private float accel = SensorManager.GRAVITY_EARTH;
     private float accelPrevious = SensorManager.GRAVITY_EARTH;
+
+    ///////////////SHARED PREFERENCE/////////////
+    public static final String APP_PREFERENCES = "My Settings";
+    public static String SP_SHAKE_SENSIVITY = "";
+    SharedPreferences mSettings;
+////////////////////////////////////////////////////////////////////////////////////////
 
 
     @Override
@@ -38,6 +45,7 @@ public class GameActivity3 extends Activity {
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
 
+        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);//
     }
 
     protected void onStart() {
@@ -75,6 +83,9 @@ public class GameActivity3 extends Activity {
                 sensorListener,
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
+        if (mSettings.contains(SP_SHAKE_SENSIVITY)) {
+            SHAKE_SENSITIVITY = Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY, ""));
+        }
     }
 
     @Override
@@ -127,5 +138,6 @@ public class GameActivity3 extends Activity {
 
     public void onBackPressed() {
         //do nothing here
+        super.onBackPressed();
     }
 }

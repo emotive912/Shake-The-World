@@ -36,7 +36,7 @@ public class SettingsActivity extends Activity {
 
     ///////////////SHARED PREFERENCE/////////////
     public static final String APP_PREFERENCES = "My Settings";
-    public static String SP_SHAKE_SENSIVITY = "SS";
+    public static String SP_SHAKE_SENSIVITY = "";
     SharedPreferences mSettings;
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -101,6 +101,9 @@ public class SettingsActivity extends Activity {
     public void btn_start_set_Click(View v){
         Timer();
         Toast.makeText(getApplicationContext(), "Start Shaking", Toast.LENGTH_SHORT).show();
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putString(SP_SHAKE_SENSIVITY, strSensivity);
+        editor.apply();
         pict.startAnimation(shaking);
 
     }
@@ -138,13 +141,5 @@ public class SettingsActivity extends Activity {
 
         }
     }
-    /*/////////////////////////////////
-        HERE A VERY BIG COMMENT
-    //////////////////////////////// */
-
-
-    /*////////////////////////////////
-        ANOTHER BIGGEST COMMENT EVER
-        //////////////////////////////*/
 
     }

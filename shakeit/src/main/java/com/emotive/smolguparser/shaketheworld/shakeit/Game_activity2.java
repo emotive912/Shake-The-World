@@ -3,6 +3,7 @@ package com.emotive.smolguparser.shaketheworld.shakeit;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -18,7 +19,7 @@ import android.widget.TextView;
 public class Game_activity2 extends Activity {
 
     private static final String TAG = "ShakeActivity";
-    private static final int SHAKE_SENSITIVITY = 15;
+    private static int SHAKE_SENSITIVITY ;
     public int i;
     public int j = 5;
 
@@ -26,6 +27,12 @@ public class Game_activity2 extends Activity {
     private SensorManager sensorManager;
     private float accel = SensorManager.GRAVITY_EARTH;
     private float accelPrevious = SensorManager.GRAVITY_EARTH;
+
+    ///////////////SHARED PREFERENCE/////////////
+    public static final String APP_PREFERENCES = "My Settings";
+    public static String SP_SHAKE_SENSIVITY = "";
+    SharedPreferences mSettings;
+////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,7 @@ public class Game_activity2 extends Activity {
                 SensorManager.SENSOR_DELAY_NORMAL);
         i = 0;
         //styles to text
+        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);//
 
 
     }
@@ -52,8 +60,10 @@ public class Game_activity2 extends Activity {
                 sensorListener,
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
+        if (mSettings.contains(SP_SHAKE_SENSIVITY)) {
+            SHAKE_SENSITIVITY = Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY, ""));
+        }
     }
-
     @Override
     protected void onStop() {
         sensorManager.unregisterListener(sensorListener);
@@ -131,5 +141,6 @@ public class Game_activity2 extends Activity {
 
     public void onBackPressed() {
         //do nothing here
+        super.onBackPressed();
     }
 }
