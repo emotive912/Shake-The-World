@@ -138,5 +138,7 @@ public class SettingsActivity extends Activity {
 
         }
     }
-    //hello nik
-}
+    /*/////////////////////////////////
+        HERE A VERY BIG COMMENT
+    //////////////////////////////// */
+    }
