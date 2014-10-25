@@ -45,6 +45,7 @@
     <string name="settings">Settings</string>
 
 
+
     <string name = "text_in_settings">For correct work of your application \nyou should made a acceleration calibration.\nClick on button "Start"\nand shake your phone until accelerometer will be ready for work. </string>
 
 </resources>

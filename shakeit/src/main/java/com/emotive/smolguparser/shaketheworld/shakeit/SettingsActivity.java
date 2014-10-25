@@ -14,6 +14,9 @@ import android.os.Vibrator;
 import android.os.Bundle;
 import android.preference.DialogPreference;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -27,6 +30,8 @@ public class SettingsActivity extends Activity {
     private SensorManager sensorManager;
     private float accel = SensorManager.GRAVITY_EARTH;
     private float accelPrevious = SensorManager.GRAVITY_EARTH;
+    ImageView pict;
+    Animation shaking;
 
 
     @Override
@@ -36,6 +41,8 @@ public class SettingsActivity extends Activity {
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+            pict = (ImageView) findViewById(R.id.pic);
+            shaking = AnimationUtils.loadAnimation(this,R.anim.shake);
     }
 
     public void Timer() {
@@ -52,7 +59,7 @@ public class SettingsActivity extends Activity {
                         //vibro.vibrate(500);
                         AlertDialog.Builder NEKIT_LOHUDRA = new AlertDialog.Builder(SettingsActivity.this);
                         NEKIT_LOHUDRA.setTitle("Done")
-                                .setMessage("Colibration has ended.")
+                                .setMessage("Calibration has ended.")
                                 .setCancelable(false)
                                 .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
 
@@ -82,7 +89,9 @@ public class SettingsActivity extends Activity {
 
     public void btn_start_set_Click(View v){
         Timer();
-        Toast.makeText(getApplicationContext(), "asdasdasdasdas", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Start Shaking", Toast.LENGTH_SHORT).show();
+        pict.startAnimation(shaking);
+
     }
 
     private final SensorEventListener sensorListener = new SensorEventListener() {

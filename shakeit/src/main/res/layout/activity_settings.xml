@@ -9,14 +9,13 @@
         android:id="@+id/tv_title_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:text="@string/settings"
         android:layout_margin="20dp"
         android:layout_centerHorizontal="true"
         android:textSize="40sp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textColor="@color/black_color"
-        />
+        android:textColor="@color/black_color"/>
 
     <TextView
         android:id="@+id/tv_description_settings"
@@ -29,17 +28,29 @@
         android:layout_margin="15dp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="@color/black_color"/>
 
     <Button
-
+        android:id="@+id/btnToCalibrate"
         android:onClick="btn_start_set_Click"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/tv_description_settings"
         android:layout_centerHorizontal="true"
         android:background="@drawable/cloud"
-        android:text="@string/start"/>
+        android:text="@string/start"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/icon"
+        android:layout_below="@+id/btnToCalibrate"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"/>
 
 
 
