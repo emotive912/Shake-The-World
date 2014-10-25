@@ -26,6 +26,10 @@ public class StartScreen extends Activity {
         initForm();
     }
 
+    protected void onResume(){
+        super.onResume();
+
+    }
     private void initForm() {
         Button btnPlay = (Button)findViewById(R.id.btnPlay);
         Button btnStatistic = (Button)findViewById(R.id.btnStatistic);
@@ -105,17 +109,4 @@ public class StartScreen extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-  /*  @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus){
-            DecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
-        }
-    } */
 }

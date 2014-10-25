@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -14,12 +15,13 @@ import android.os.Vibrator;
 import android.os.Bundle;
 import android.preference.DialogPreference;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class SettingsActivity extends Activity {
 
-    public int SHAKE_SENSIVITY_SETTING = 25;
+    public int SHAKE_SENSIVITY_SETTING = 25,SHAKE_SENSIVITY;
     public boolean check = true;
     Vibrator vibro;
     int shakes = 0;
@@ -28,7 +30,11 @@ public class SettingsActivity extends Activity {
     private float accel = SensorManager.GRAVITY_EARTH;
     private float accelPrevious = SensorManager.GRAVITY_EARTH;
 
-
+///////////////SHARED PREFERENCE/////////////
+    public static final String APP_PREFERENCES = "My Settings";
+    public static String SP_SHAKE_SENSIVITY = "SS";
+    SharedPreferences mSettings;
+////////////////////////////////////////////////////////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +42,8 @@ public class SettingsActivity extends Activity {
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+
+        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
     }
 
     public void Timer() {
@@ -48,7 +56,8 @@ public class SettingsActivity extends Activity {
 
                     } else {
                         check = false;
-
+                        SHAKE_SENSIVITY = SHAKE_SENSIVITY_SETTING;
+                        strSensivity = ""+SHAKE_SENSIVITY;
                         //vibro.vibrate(500);
                         AlertDialog.Builder NEKIT_LOHUDRA = new AlertDialog.Builder(SettingsActivity.this);
                         NEKIT_LOHUDRA.setTitle("Done")
@@ -67,22 +76,26 @@ public class SettingsActivity extends Activity {
                         alert.show();
                     }
                 }
-
         }
         @Override
         public void onFinish () {
-
         }
-    }
-
-    ;
+    };
     cdt.start();
-}
-
+}//method of CountDownTimer
+ protected void onPause(){
+     super.onPause();
+     SharedPreferences.Editor editor = mSettings.edit();
+     editor.putString(SP_SHAKE_SENSIVITY, strSensivity);
+     editor.apply();
+ }
 
     public void btn_start_set_Click(View v){
         Timer();
-        Toast.makeText(getApplicationContext(), "asdasdasdasdas", Toast.LENGTH_SHORT).show();
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putString(SP_SHAKE_SENSIVITY, strSensivity);
+        editor.apply();
+        Toast.makeText(getApplicationContext(), "Start", Toast.LENGTH_SHORT).show();
     }
 
     private final SensorEventListener sensorListener = new SensorEventListener() {
@@ -102,4 +115,12 @@ public class SettingsActivity extends Activity {
 
         }
     };
+
+    protected void onResume(){
+        super.onResume();
+        if(mSettings.contains(SP_SHAKE_SENSIVITY)){
+            //TextView tv = (TextView)findViewById(R.id.tv_title_settings);
+           SHAKE_SENSIVITY= Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY,""));
+        }
+    }
 }
