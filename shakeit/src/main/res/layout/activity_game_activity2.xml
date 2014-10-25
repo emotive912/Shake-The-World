@@ -18,7 +18,7 @@
         android:text="0"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/black_color"
-        android:textSize="80dp"
+        android:textSize="80sp"
         android:fontFamily="sans-serif-condensed" />
 
     <TextView
@@ -28,7 +28,7 @@
         android:layout_marginTop="82dp"
         android:text="@string/shake"
         android:textColor="@color/black_color"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:gravity="center"
         android:fontFamily="sans-serif-condensed"
         android:textStyle="bold"
@@ -43,7 +43,7 @@
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:gravity="center"
         android:fontFamily="sans-serif-condensed"
         android:textStyle="bold"
@@ -61,7 +61,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="27dp"
+        android:textSize="27sp"
         android:gravity="center" />
 
 

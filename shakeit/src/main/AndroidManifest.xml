@@ -81,7 +81,7 @@
 
     <uses-sdk
         android:maxSdkVersion="21"
-        android:minSdkVersion="11"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="21" />
 
 </manifest>

@@ -15,7 +15,7 @@
         android:gravity="center"
         android:text="@string/choosing_game_mode"
         android:textColor="@color/black_color"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_above="@+id/btnSinglePlayer"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

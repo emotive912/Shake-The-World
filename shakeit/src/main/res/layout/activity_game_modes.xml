@@ -32,7 +32,7 @@
         android:background="@drawable/pic"
         android:gravity="center"
         android:text="@string/endurance"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:fontFamily="sans-serif-condensed" />
 
     <Button
@@ -45,7 +45,7 @@
         android:background="@drawable/pic"
         android:gravity="center"
         android:text="@string/time"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:fontFamily="sans-serif-condensed" />
 
     <Button
@@ -59,7 +59,7 @@
         android:background="@drawable/pic"
         android:gravity="center"
         android:text="@string/speed"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:fontFamily="sans-serif-condensed" />
 
 </RelativeLayout>
