@@ -95,7 +95,7 @@ public class SettingsActivity extends Activity {
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putString(SP_SHAKE_SENSIVITY, strSensivity);
         editor.apply();
-        Toast.makeText(getApplicationContext(), "Start", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "asdasdasdasd", Toast.LENGTH_SHORT).show();
     }
 
     private final SensorEventListener sensorListener = new SensorEventListener() {
