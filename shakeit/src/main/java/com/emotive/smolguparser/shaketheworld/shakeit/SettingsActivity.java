@@ -138,5 +138,5 @@ public class SettingsActivity extends Activity {
 
         }
     }
-    ///here is a comment that everything works
+    //hello nik
 }
