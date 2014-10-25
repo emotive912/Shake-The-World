@@ -65,7 +65,8 @@ public class SettingsActivity extends Activity {
 
                     } else {
                         check = false;
-
+                        SHAKE_SENSIVITY = SHAKE_SENSIVITY_SETTING;
+                        strSensivity = ""+SHAKE_SENSIVITY;
                         //vibro.vibrate(500);
                         AlertDialog.Builder NEKIT_LOHUDRA = new AlertDialog.Builder(SettingsActivity.this);
                         NEKIT_LOHUDRA.setTitle("Done")
@@ -128,5 +129,13 @@ public class SettingsActivity extends Activity {
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putString(SP_SHAKE_SENSIVITY, strSensivity);
         editor.apply();
+    }
+    protected void onResume() {
+        super.onResume();
+        if (mSettings.contains(SP_SHAKE_SENSIVITY)) {
+            //TextView tv = (TextView)findViewById(R.id.tv_title_settings);
+            SHAKE_SENSIVITY = Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY, ""));
+
+        }
     }
 }
