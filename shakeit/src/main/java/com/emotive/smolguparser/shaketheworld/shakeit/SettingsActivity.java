@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -22,7 +23,7 @@ import android.widget.Toast;
 
 public class SettingsActivity extends Activity {
 
-    public int SHAKE_SENSIVITY_SETTING = 25;
+    public int SHAKE_SENSIVITY_SETTING = 25,SHAKE_SENSIVITY;
     public boolean check = true;
     Vibrator vibro;
     int shakes = 0;
@@ -33,6 +34,11 @@ public class SettingsActivity extends Activity {
     ImageView pict;
     Animation shaking;
 
+    ///////////////SHARED PREFERENCE/////////////
+    public static final String APP_PREFERENCES = "My Settings";
+    public static String SP_SHAKE_SENSIVITY = "SS";
+    SharedPreferences mSettings;
+////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,8 @@ public class SettingsActivity extends Activity {
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
             pict = (ImageView) findViewById(R.id.pic);
             shaking = AnimationUtils.loadAnimation(this,R.anim.shake);
+
+        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);//
     }
 
     public void Timer() {
@@ -115,5 +123,10 @@ public class SettingsActivity extends Activity {
     };
 
 
-
+    protected void onPause(){
+        super.onPause();
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putString(SP_SHAKE_SENSIVITY, strSensivity);
+        editor.apply();
+    }
 }
