@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Shake-The-World.iml" filepath="$PROJECT_DIR$/Shake-The-World.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShakeTheWorld.iml" filepath="$PROJECT_DIR$/ShakeTheWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/shakeit/shakeit.iml" filepath="$PROJECT_DIR$/shakeit/shakeit.iml" />
     </modules>

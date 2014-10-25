@@ -27,12 +27,12 @@
             android:name=".StatisticActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-
         </activity>
         <activity
             android:name=".ChooseMode"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            </activity>
         <activity
             android:name=".GameModes"
             android:screenOrientation="portrait"
