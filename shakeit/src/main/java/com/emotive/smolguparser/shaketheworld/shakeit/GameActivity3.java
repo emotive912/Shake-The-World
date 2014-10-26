@@ -16,11 +16,11 @@ import android.util.Log;
 import android.widget.TextView;
 
 
+/////////////НА СКОРОСТЬ -> ВРЕМЯ ЗА КОЛИЧЕСТВО ШЕЙКОВ/////////////
 public class GameActivity3 extends Activity {
 
     private static final String TAG = "ShakeActivity";
     private static  int SHAKE_SENSITIVITY ;
-    public int j = 4;
     public int i = 100, k = 0;
 
     private Timer myTimer;
@@ -140,7 +140,6 @@ public class GameActivity3 extends Activity {
     }
 
     public void onBackPressed() {
-        //do nothing here
         super.onBackPressed();
     }
 }

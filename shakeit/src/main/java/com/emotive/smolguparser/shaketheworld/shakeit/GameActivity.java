@@ -21,24 +21,18 @@ import android.widget.TextView;
 
 import java.util.Timer;
 
+/////////////ВЫНОСЛИВОСТЬ -> КОЛИЧЕСТВО ШЕЙКОВ/////////////
+
 public class GameActivity extends Activity {
     private static final String TAG = "ShakeActivity";
 
-    public int j = 4;
-    public int i, k = 0; //k-our timer
+    public int i;
 
     int SHAKE_SENSITIVITY;
     double gameF = 0;
-    double F = 0;
-    int statForse = 0;
     double maxForse = 0;
-    private Timer myTimer;
-    double timeFG, T;
-    double timeS = 0;
-    double minTS = 1000000;
-    double allPath = 0, OnePath;
-    static String asd = "asd";
-    int allShakes, gameShakes;
+    double timeFG;
+
     private SensorManager sensorManager;
     private float accel = SensorManager.GRAVITY_EARTH;
     private float accelPrevious = SensorManager.GRAVITY_EARTH;
@@ -48,8 +42,6 @@ public class GameActivity extends Activity {
     public static String SP_SHAKE_SENSIVITY = "";
     SharedPreferences mSettings;
 ////////////////////////////////////////////////////////////////////////////////////////
-
-    SettingsActivity setAct = new SettingsActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +55,6 @@ public class GameActivity extends Activity {
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
         i = 0;
-        //styles to text
         mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);//
 
     }
@@ -116,62 +107,8 @@ public class GameActivity extends Activity {
         }
     };
 
-    public void gameForse(SensorEvent sensorEvent) { //силы потрачено за игру, перменная gameForse
-        float x = sensorEvent.values[0];
-        float y = sensorEvent.values[1];
-        float z = sensorEvent.values[2];
-        F = Math.sqrt(x * x + y * y + z * z) * 0.14;
-        //	F=Math.round(F);
-        gameF += F;
-    }
-
-    public void statForse() { //общая сила за все игры, в статистику
-        statForse += gameF;
-    }
-
-    public void maxForse(SensorEvent sensorEvent) {// максимальная сила за шейк, переменная maxForse
-        float x = sensorEvent.values[0];
-        float y = sensorEvent.values[1];
-        float z = sensorEvent.values[2];
-        F = Math.sqrt(x * x + y * y + z * z) * 0.14;
-        if (F > maxForse) {
-            maxForse = F;
-        }
-    }
-
-    public void timeForGame() {
-        timeFG = k;
-
-        //вернуть это как общее время игры
-    }
-
-    public void fastestShake() {// нужно переделать из-за времени
-        T = k - timeS;
-        timeS = k;
-        if (T < minTS) {
-            minTS = T;
-        }
-    }
-
-    public void fullPath(SensorEvent sensorEvent) {// нужно переделать из-за времени
-        float x = sensorEvent.values[0];
-        float y = sensorEvent.values[1];
-        float z = sensorEvent.values[2];
-        T = k - timeS;
-        timeS = k;
-        OnePath = Math.sqrt(x * x + y * y + z * z) * T * T / 2;
-        allPath += OnePath;
-    }
-
-    public void allShakes() {
-        gameShakes = i;
-        allShakes += gameShakes;
-
-    }
-
     public void onBackPressed() {
         //do nothing here
-        //NEVER RETURN TRUE!
 
 
     }
@@ -194,7 +131,4 @@ public class GameActivity extends Activity {
             }
         });
     }
-
-
-
 }

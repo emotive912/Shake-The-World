@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+/////////////НА ВРЕМЯ -> КОЛИЧЕСТВО ШЕЙКОВ ЗА ВРЕМЯ/////////////
 public class Game_activity2 extends Activity {
 
     private static final String TAG = "ShakeActivity";
@@ -46,7 +46,6 @@ public class Game_activity2 extends Activity {
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
         i = 0;
-        //styles to text
         mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);//
 
 
@@ -83,7 +82,6 @@ public class Game_activity2 extends Activity {
             float z = sensorEvent.values[2];
             accelPrevious = accel;
             accel = (float) Math.sqrt((double) (x * x + y * y + z * z));
-            //if (accel >SHAKE_SENSITIVITY){accel =7;}
             if (accel - accelPrevious > SHAKE_SENSITIVITY) {
 
                 TextView tv = (TextView) findViewById(R.id.count);
@@ -140,7 +138,6 @@ public class Game_activity2 extends Activity {
     }
 
     public void onBackPressed() {
-        //do nothing here
         super.onBackPressed();
     }
 }
