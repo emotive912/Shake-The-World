@@ -22,7 +22,7 @@
     <string name="seconds">сек</string>
     <string name="shake">Shake</string>
     <string name="shake_the_world">Shake The World</string>
-    <string name="shakeov">Shake-ов</string>
+    <string name="shakeov">Всего Shake-ов</string>
     <string name="share">Поделиться</string>
     <string name="single">Один</string>
     <string name="speed">Скорость</string>
@@ -50,7 +50,9 @@
     <string name="exit">Выход</string>
     <string name="ok">ОК</string>
     <string name="startshake">Начните трясти</string>
-
+    <string name="best_time_in_speed">Лучшее время(Режим "Скорость")</string>
+    <string name="shakes_timemode">Shakes(Режим "Время")</string>
+    <string name="stamina_endurance">Выносливость\n(Режим "Выносливость")</string>
 
 
 </resources>

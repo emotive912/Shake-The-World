@@ -33,24 +33,9 @@ TextView tvPlayedGames,tvAllSHakes;
     }
 
     private void initializeForm() {
-        Button btnShare =  (Button)findViewById(R.id.sharing_button);
+
         Button btnMenu = (Button) findViewById(R.id.menu);
-        btnShare.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Мои результаты в #shake_the_world");
-                sendIntent.setType("text/plain");
-                startActivity(sendIntent);
-
-            }
-
-
-        });
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override

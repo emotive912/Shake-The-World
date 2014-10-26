@@ -101,7 +101,7 @@ public class SettingsActivity extends Activity {
     public void btn_start_set_Click(View v) {
         v.setClickable(false);
         Timer();
-        Toast.makeText(getApplicationContext(), getString(R.string.startshake), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), getString(R.string.start_shake), Toast.LENGTH_SHORT).show();
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putString("SP_SHAKE_SENSIVITY", strSensivity);
         editor.apply();
