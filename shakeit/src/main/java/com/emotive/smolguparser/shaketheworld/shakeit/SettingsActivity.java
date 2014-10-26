@@ -45,7 +45,6 @@ public class SettingsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        Toast.makeText(getApplicationContext(), "Activity has loaded", Toast.LENGTH_SHORT).show();
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
@@ -70,10 +69,10 @@ public class SettingsActivity extends Activity {
                         //vibro.vibrate(500);
 
                         AlertDialog.Builder NEKIT_LOHUDRA = new AlertDialog.Builder(SettingsActivity.this);
-                        NEKIT_LOHUDRA.setTitle("Done")
-                                .setMessage("Calibration has ended.")
+                        NEKIT_LOHUDRA.setTitle(getString(R.string.done))
+                                .setMessage(getString(R.string.cal_end))
                                 .setCancelable(false)
-                                .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                                .setNegativeButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
 
                                     public void onClick(DialogInterface dialog, int arg1) {
                                         dialog.cancel();
@@ -103,7 +102,7 @@ public class SettingsActivity extends Activity {
 
     public void btn_start_set_Click(View v) {
         Timer();
-        Toast.makeText(getApplicationContext(), "Start Shaking", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), getString(R.string.startshake), Toast.LENGTH_SHORT).show();
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putString("SP_SHAKE_SENSIVITY", strSensivity);
         editor.apply();

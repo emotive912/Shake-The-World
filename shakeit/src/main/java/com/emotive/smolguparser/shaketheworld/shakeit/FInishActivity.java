@@ -14,9 +14,6 @@ public class FInishActivity extends Activity {
 
     String res;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +25,7 @@ public class FInishActivity extends Activity {
         AllButtons();
         res = getString(R.string.my_result);
         res = res+ " "+tvresult.getText();
-        tvresult.setText(res);
+
     }
 
     public void AllButtons() {

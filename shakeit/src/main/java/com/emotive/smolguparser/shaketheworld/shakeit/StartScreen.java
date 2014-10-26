@@ -65,7 +65,7 @@ public class StartScreen extends Activity {
     }
 
     public void onBackPressed() {
-        new AlertDialog.Builder(this).setTitle(R.string.dialog_exit).setMessage(R.string.exit_mes).setPositiveButton(R.string.dialog_exit, new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(this).setTitle(R.string.exit).setMessage(R.string.exit_mes).setPositiveButton(R.string.dialog_exit, new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {

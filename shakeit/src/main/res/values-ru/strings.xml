@@ -40,7 +40,15 @@
     <string name="game2_desc">У тебя 50 секунд.Shake\'ай как можно больше</string>
     <string name="game3_desc">Тебе нужно Shake\'нуть 100раз. Как быстро ты это сделаешь?</string>
     <string name="settings">Настройки</string>
-    <string name="text_in_settings">Для правильной работы этого приложения вы должны сделать калибровку акселерометра. Нажмите кнопку \"Старт\"  и начинайте трясти телефон пока акселерометр не будет готов к работе.</string>
+    <string name="text_in_settings">Для правильной работы этого приложения вы должны сделать калибровку акселерометра. Нажмите кнопку \"Старт\"  и начинайте трясти телефон пока акселерометр не будет готов к рабо
+    <string name="cal_end">Калибровка завершена.</string>
+
+
+</string>
+    <string name="done">Готово.</string>
+    <string name="exit">Выход</string>
+    <string name="ok">ОК</string>
+    <string name="startshake">Начните трясти</string>
 
 
 </resources>
