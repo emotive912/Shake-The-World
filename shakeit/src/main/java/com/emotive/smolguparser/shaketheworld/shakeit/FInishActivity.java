@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class FInishActivity extends Activity {
 
-    //String res = getString(R.string.my_result);
+    String res;
 
 
 
@@ -26,6 +26,9 @@ public class FInishActivity extends Activity {
         String count = i.getStringExtra("count");
         tvresult.setText(count);
         AllButtons();
+        res = getString(R.string.my_result);
+        res = res+ " "+tvresult.getText();
+        tvresult.setText(res);
     }
 
     public void AllButtons() {
@@ -50,7 +53,7 @@ public class FInishActivity extends Activity {
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.my_result));
+                sendIntent.putExtra(Intent.EXTRA_TEXT, res);
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
             }
