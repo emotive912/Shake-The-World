@@ -41,7 +41,7 @@
         android:background="@drawable/pic"
         android:text="@string/statistic"
         android:textSize="25sp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="sans-serif-condensed"
         android:layout_below="@+id/btnPlay"
         android:layout_alignLeft="@+id/btnPlay"
@@ -55,7 +55,7 @@
             android:layout_below="@+id/btnStatistic"
             android:layout_alignLeft="@+id/btnStatistic"
             android:layout_alignStart="@+id/btnStatistic"
-            android:layout_marginTop="31dp"
+            android:layout_marginTop="40dp"
             android:text="@string/settings"
             android:textSize="25sp"
             android:fontFamily="sans-serif-condensed"/>

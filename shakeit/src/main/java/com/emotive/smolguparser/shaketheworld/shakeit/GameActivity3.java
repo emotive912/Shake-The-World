@@ -32,7 +32,7 @@ public class GameActivity3 extends Activity {
     public static final String APP_PREFERENCES = "My Settings";
    // public static String SP_SHAKE_SENSIVITY = "";
     SharedPreferences mSettings;
-////////////////////////////////////////////////////////////////////////////////////////
+
 
 
     @Override
@@ -45,7 +45,7 @@ public class GameActivity3 extends Activity {
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
 
-        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);//
+        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
     }
 
     protected void onStart() {

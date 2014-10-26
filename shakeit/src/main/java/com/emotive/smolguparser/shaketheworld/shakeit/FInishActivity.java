@@ -12,13 +12,17 @@ import android.widget.TextView;
 
 public class FInishActivity extends Activity {
 
+    //String res = getString(R.string.my_result);
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
         Intent i = getIntent();
         TextView tvresult = (TextView) findViewById(R.id.textResult);
-
         String count = i.getStringExtra("count");
         tvresult.setText(count);
         AllButtons();
@@ -28,6 +32,9 @@ public class FInishActivity extends Activity {
         Button btnstat = (Button) findViewById(R.id.buttonToStat);
         Button btntoShare = (Button) findViewById(R.id.sharing);
         Button onemorebtn = (Button) findViewById(R.id.button_onemore);
+
+
+        //
 
         btnstat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +50,7 @@ public class FInishActivity extends Activity {
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Мои результаты в #shake_the_world");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.my_result));
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
             }
