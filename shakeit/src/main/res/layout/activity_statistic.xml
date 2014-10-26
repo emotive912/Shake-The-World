@@ -154,6 +154,7 @@
         android:layout_height="60dp"
         android:text="@string/main_menu"
         android:layout_alignParentBottom="true"
+        android:layout_margin="70dp"
         android:background="@drawable/cloud"
         android:fontFamily="sans-serif-condensed"
         android:textSize="25sp"

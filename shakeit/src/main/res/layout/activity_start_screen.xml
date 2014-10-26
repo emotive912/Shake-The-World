@@ -16,10 +16,8 @@
         android:textColor="@color/black_color"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:layout_above="@+id/btnPlay"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="86dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
         android:fontFamily="sans-serif-condensed" />
 
     <Button
@@ -29,7 +27,9 @@
         android:background="@drawable/pic"
         android:gravity="center"
         android:text="@string/play"
+        android:layout_below="@id/tvShakeIT"
         android:textSize="25sp"
+        android:layout_margin="40dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif-condensed" />
@@ -41,11 +41,9 @@
         android:background="@drawable/pic"
         android:text="@string/statistic"
         android:textSize="25sp"
-        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif-condensed"
-        android:layout_below="@+id/btnPlay"
-        android:layout_alignLeft="@+id/btnPlay"
-        android:layout_alignStart="@+id/btnPlay" />
+        android:layout_below="@+id/btnPlay" />
 
         <Button
             android:id="@+id/button_settings"
@@ -53,10 +51,9 @@
             android:layout_height="60dp"
             android:background="@drawable/cloud"
             android:layout_below="@+id/btnStatistic"
-            android:layout_alignLeft="@+id/btnStatistic"
-            android:layout_alignStart="@+id/btnStatistic"
-            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
             android:text="@string/settings"
+            android:layout_margin="40dp"
             android:textSize="25sp"
             android:fontFamily="sans-serif-condensed"/>
 </RelativeLayout>
