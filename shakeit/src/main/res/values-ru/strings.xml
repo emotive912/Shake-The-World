@@ -3,9 +3,9 @@
     <string name="action_settings">Настройки</string>
     <string name="all_shakes">Всего Shake-ов</string>
     <string name="choosing_game_mode">Выбери режим игры</string>
-    <string name="dialog_exit">Выход</string>
-    <string name="dialog_playAgain">Играть снова</string>
-    <string name="dialog_question">Вы хотите выйти или играть снова?</string>
+    <string name="dialog_exit">Да</string>
+    <string name="dialog_playAgain">Нет</string>
+    <string name="dialog_question">Вы хотите выйти?</string>
     <string name="endurance">Выносливость</string>
     <string name="exit_mes">Вы действительно хотите выйти?</string>
     <string name="force">Сил приложенно</string>
@@ -40,15 +40,17 @@
     <string name="game2_desc">У тебя 50 секунд.Shake\'ай как можно больше</string>
     <string name="game3_desc">Тебе нужно Shake\'нуть 100раз. Как быстро ты это сделаешь?</string>
     <string name="settings">Настройки</string>
-    <string name="text_in_settings">Для правильной работы этого приложения вы должны сделать калибровку акселерометра. Нажмите кнопку \"Старт\"  и начинайте трясти телефон пока акселерометр не будет готов к рабо
+    <string name="text_in_settings">Для правильной работы этого приложения вы должны сделать калибровку акселерометра.
+    Нажмите кнопку \"Старт\"  и начинайте трясти телефон пока акселерометр не будет готов к работе </string>
     <string name="cal_end">Калибровка завершена.</string>
 
 
-</string>
+
     <string name="done">Готово.</string>
     <string name="exit">Выход</string>
     <string name="ok">ОК</string>
     <string name="startshake">Начните трясти</string>
+
 
 
 </resources>
