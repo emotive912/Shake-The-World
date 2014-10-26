@@ -11,7 +11,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 public class SplashActivity extends Activity {
 
     private static int SPLASH_TIME_OUT = 2000;
@@ -43,7 +42,6 @@ public class SplashActivity extends Activity {
                 else{Intent i = new Intent(getApplicationContext(), StartScreen.class);
                     startActivity(i);
                     finish();
-
                 }
             }
         }, SPLASH_TIME_OUT);
@@ -53,8 +51,6 @@ public class SplashActivity extends Activity {
         Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
         img.startAnimation(shake);
         tv.startAnimation(shake);
-
-
     }
 
     protected void onResume() {

@@ -34,7 +34,8 @@ public class SettingsActivity extends Activity {
     ImageView pict;
     Animation shaking;
 
-    ///////////////SHARED PREFERENCE/////////////
+    StatisticActivity statAct = new StatisticActivity();
+//////////////////////////////////SHARED PREFERENCE////////////////////////////////////
     public boolean firstLaunch;
     public static final String APP_PREFERENCES = "My Settings";
     SharedPreferences mSettings;
@@ -85,10 +86,8 @@ public class SettingsActivity extends Activity {
                         alert.show();
                     }
                 }
-
             }
 
-            @Override
             public void onFinish() {
                 check = false;
                 SHAKE_SENSIVITY = SHAKE_SENSIVITY_SETTING;
@@ -99,15 +98,14 @@ public class SettingsActivity extends Activity {
         cdt.start();
     }
 
-
     public void btn_start_set_Click(View v) {
+        v.setClickable(false);
         Timer();
         Toast.makeText(getApplicationContext(), getString(R.string.startshake), Toast.LENGTH_SHORT).show();
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putString("SP_SHAKE_SENSIVITY", strSensivity);
         editor.apply();
         pict.startAnimation(shaking);
-
     }
 
     private final SensorEventListener sensorListener = new SensorEventListener() {
@@ -124,30 +122,25 @@ public class SettingsActivity extends Activity {
         }
 
         @Override
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-        }
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {}
     };
-
 
     protected void onPause() {
         super.onPause();
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putInt("SP_SHAKE_SENSIVITY", SHAKE_SENSIVITY);
-        //editor.apply();
         editor.putBoolean("SP_FIRST_LAUNCH", firstLaunch);
+        if(!mSettings.contains("SP_all_shakes") && !mSettings.contains("SP_all_games")){
+        editor.putInt("SP_all_shakes", statAct.all_shakes);
+        editor.putInt("SP_all_games", statAct.all_games);
+        }
         editor.apply();
     }
 
     protected void onResume() {
         super.onResume();
-
         if (mSettings.contains("SP_SHAKE_SENSIVITY")) {
-            //TextView tv = (TextView)findViewById(R.id.tv_title_settings);
             SHAKE_SENSIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20);
-
-
         }
-
     }
 }

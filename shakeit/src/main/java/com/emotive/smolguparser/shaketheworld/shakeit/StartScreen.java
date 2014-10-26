@@ -14,11 +14,6 @@ import android.widget.Button;
 
 public class StartScreen extends Activity {
 
-  /* private final String exit_dialog = getResources().getString(R.string.exit_mes);
-   private final  String exit = getResources().getString(R.string.dialog_exit);
-   private final String cancel = getResources().getString(R.string.dialog_playAgain);*/
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +47,6 @@ public class StartScreen extends Activity {
             }
         });
 
-
         button_to_set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +55,6 @@ public class StartScreen extends Activity {
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
             }
         });
-
     }
 
     public void onBackPressed() {
@@ -80,11 +73,9 @@ public class StartScreen extends Activity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // TODO Auto-generated method stub
-
             }
         }).show();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -104,6 +95,4 @@ public class StartScreen extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

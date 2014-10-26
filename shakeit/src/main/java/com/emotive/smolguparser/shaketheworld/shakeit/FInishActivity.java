@@ -33,9 +33,6 @@ public class FInishActivity extends Activity {
         Button btntoShare = (Button) findViewById(R.id.sharing);
         Button onemorebtn = (Button) findViewById(R.id.button_onemore);
 
-
-        //
-
         btnstat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +41,6 @@ public class FInishActivity extends Activity {
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
-
         btntoShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +51,6 @@ public class FInishActivity extends Activity {
                 startActivity(sendIntent);
             }
         });
-
         onemorebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,6 +86,5 @@ public class FInishActivity extends Activity {
         Intent a = new Intent(getApplicationContext(), StartScreen.class);
         startActivity(a);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
     }
 }

@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
 public class MultiPlayer extends Activity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +14,6 @@ public class MultiPlayer extends Activity {
         setContentView(R.layout.activity_multi_player);
         
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

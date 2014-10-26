@@ -12,14 +12,12 @@ import android.widget.Button;
 
 public class GameModes extends Activity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_modes);
         initial();
     }
-
 
     public void initial() {
 

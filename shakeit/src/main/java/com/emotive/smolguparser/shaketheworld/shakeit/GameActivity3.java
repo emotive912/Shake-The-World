@@ -32,8 +32,6 @@ public class GameActivity3 extends Activity {
     public static final String APP_PREFERENCES = "My Settings";
     SharedPreferences mSettings;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,8 +71,6 @@ public class GameActivity3 extends Activity {
         }
     };
 
-
-
     protected void onShake() {
         Log.d(TAG, "SHAKE");
     }
@@ -102,7 +98,6 @@ public class GameActivity3 extends Activity {
 
         public void onAccuracyChanged(Sensor sensor, int accuracy) {}
     };
-
 
     protected void onFinish() {
         TextView tv = (TextView) findViewById(R.id.textResult);

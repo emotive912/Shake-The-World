@@ -23,7 +23,6 @@ public class Game_activity2 extends Activity {
     public int i;
     public int j = 5;
 
-
     private SensorManager sensorManager;
     private float accel = SensorManager.GRAVITY_EARTH;
     private float accelPrevious = SensorManager.GRAVITY_EARTH;
@@ -37,7 +36,6 @@ public class Game_activity2 extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_activity2);
-        //goStp();
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorManager.registerListener(
@@ -50,7 +48,6 @@ public class Game_activity2 extends Activity {
 
     protected void onStop() {
         sensorManager.unregisterListener(sensorListener);
-
         super.onStop();
     }
 
@@ -78,7 +75,6 @@ public class Game_activity2 extends Activity {
 
         public void onAccuracyChanged(Sensor sensor, int accuracy) {}
     };
-
 
     protected void onStart() {
         super.onStart();

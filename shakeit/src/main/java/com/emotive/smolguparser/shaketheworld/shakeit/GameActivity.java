@@ -36,6 +36,7 @@ public class GameActivity extends Activity {
     private SensorManager sensorManager;
     private float accel = SensorManager.GRAVITY_EARTH;
     private float accelPrevious = SensorManager.GRAVITY_EARTH;
+    StatisticActivity statAct; //экземпляр класса статистики
 
     ///////////////SHARED PREFERENCE/////////////
     public static final String APP_PREFERENCES = "My Settings";
@@ -54,34 +55,20 @@ public class GameActivity extends Activity {
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
         i = 0;
-        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);//
-
+        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+         statAct = new StatisticActivity();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
 
-        sensorManager.registerListener(
-                sensorListener,
-                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                SensorManager.SENSOR_DELAY_NORMAL);
-        if (mSettings.contains("SP_SHAKE_SENSIVITY")) {
-            SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20);
-        }
 
-    }
         @Override
         protected void onStop () {
             sensorManager.unregisterListener(sensorListener);
-
             super.onStop();
         }
 
 
-    protected void onShake() {
-        Log.d(TAG, "SHAKE");
-    }
+    protected void onShake() {Log.d(TAG, "SHAKE");}
 
     private final SensorEventListener sensorListener = new SensorEventListener() {
 
@@ -122,7 +109,30 @@ public class GameActivity extends Activity {
                 finish.putExtra("time", timeFG);
                 startActivity(finish);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
             }
         });
+    }
+    protected void onResume() {
+        super.onResume();
+        sensorManager.registerListener(
+                sensorListener,
+                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL);
+        if (mSettings.contains("SP_SHAKE_SENSIVITY")) {
+            SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20); }
+        if (mSettings.contains("SP_all_games")){
+            statAct.all_games = mSettings.getInt("SP_all_games", 0); }
+        if(mSettings.contains("SP_all_shakes")){
+            statAct.all_shakes = mSettings.getInt("SP_all_shakes",0); }
+    }
+    protected void onPause(){
+        super.onPause();
+        statAct.all_shakes+=i;
+        statAct.all_games+=1;
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putInt("SP_all_shakes", statAct.all_shakes);
+        editor.putInt("SP_all_games",statAct.all_games);
+        editor.apply();
     }
 }
