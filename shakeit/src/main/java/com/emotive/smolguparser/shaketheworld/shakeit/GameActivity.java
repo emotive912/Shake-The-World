@@ -28,7 +28,7 @@ public class GameActivity extends Activity {
 
     public int i;
 
-    int SHAKE_SENSITIVITY;
+    int SHAKE_SENSITIVITY=20;
     double gameF = 0;
     double maxForse = 0;
     double timeFG;
@@ -39,7 +39,7 @@ public class GameActivity extends Activity {
 
     ///////////////SHARED PREFERENCE/////////////
     public static final String APP_PREFERENCES = "My Settings";
-    public static String SP_SHAKE_SENSIVITY = "";
+  //  public static String SP_SHAKE_SENSIVITY = "";
     SharedPreferences mSettings;
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -67,9 +67,10 @@ public class GameActivity extends Activity {
                 sensorListener,
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
-        if (mSettings.contains(SP_SHAKE_SENSIVITY)) {
-            SHAKE_SENSITIVITY = Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY, ""));
+        if (mSettings.contains("SP_SHAKE_SENSIVITY")) {
+            SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20);
         }
+
     }
         @Override
         protected void onStop () {
@@ -98,8 +99,6 @@ public class GameActivity extends Activity {
                 onShake();
                 i += 1;
                 tv.setText("" + i);
-
-
             }
         }
 
@@ -107,11 +106,7 @@ public class GameActivity extends Activity {
         }
     };
 
-    public void onBackPressed() {
-        //do nothing here
-
-
-    }
+    public void onBackPressed() {}
 
     public void goStp() {
         Button btn_stop = (Button) findViewById(R.id.button_stop);

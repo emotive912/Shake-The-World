@@ -30,7 +30,7 @@ public class GameActivity3 extends Activity {
 
     ///////////////SHARED PREFERENCE/////////////
     public static final String APP_PREFERENCES = "My Settings";
-    public static String SP_SHAKE_SENSIVITY = "";
+   // public static String SP_SHAKE_SENSIVITY = "";
     SharedPreferences mSettings;
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -75,28 +75,6 @@ public class GameActivity3 extends Activity {
     };
 
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        sensorManager.registerListener(
-                sensorListener,
-                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                SensorManager.SENSOR_DELAY_NORMAL);
-
-        if (mSettings.contains(SP_SHAKE_SENSIVITY)) {
-            SHAKE_SENSITIVITY = Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY, ""));
-        }
-
-
-    }
-
-    @Override
-    protected void onStop() {
-        sensorManager.unregisterListener(sensorListener);
-
-        super.onStop();
-    }
 
     protected void onShake() {
         Log.d(TAG, "SHAKE");
@@ -110,7 +88,6 @@ public class GameActivity3 extends Activity {
             float z = sensorEvent.values[2];
             accelPrevious = accel;
             accel = (float) Math.sqrt((double) (x * x + y * y + z * z));
-            //if (accel >SHAKE_SENSITIVITY){accel =7;}
             if (accel - accelPrevious > SHAKE_SENSITIVITY) {
                 TextView tv = (TextView) findViewById(R.id.count);
 
@@ -121,17 +98,14 @@ public class GameActivity3 extends Activity {
                 if (i == 0) {
                     onFinish();
                 }
-
             }
         }
 
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        }
-
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {}
     };
 
 
-    public void onFinish() {
+    protected void onFinish() {
         TextView tv = (TextView) findViewById(R.id.textResult);
         Intent intent = new Intent(getApplicationContext(), FInishActivity.class);
         intent.putExtra("count", tv.getText().toString());
@@ -141,5 +115,22 @@ public class GameActivity3 extends Activity {
 
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    protected void onResume() {
+        super.onResume();
+
+        sensorManager.registerListener(
+                sensorListener,
+                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL);
+
+        if (mSettings.contains("SP_SHAKE_SENSIVITY")) {
+            SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20);
+        }
+    }
+    protected void onStop() {
+        sensorManager.unregisterListener(sensorListener);
+        super.onStop();
     }
 }

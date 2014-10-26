@@ -30,7 +30,7 @@ public class Game_activity2 extends Activity {
 
     ///////////////SHARED PREFERENCE/////////////
     public static final String APP_PREFERENCES = "My Settings";
-    public static String SP_SHAKE_SENSIVITY = "";
+   // public static String SP_SHAKE_SENSIVITY = "";
     SharedPreferences mSettings;
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -47,23 +47,8 @@ public class Game_activity2 extends Activity {
                 SensorManager.SENSOR_DELAY_NORMAL);
         i = 0;
         mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);//
-
-
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        sensorManager.registerListener(
-                sensorListener,
-                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                SensorManager.SENSOR_DELAY_NORMAL);
-        if (mSettings.contains(SP_SHAKE_SENSIVITY)) {
-            SHAKE_SENSITIVITY = Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY, ""));
-        }
-    }
-    @Override
     protected void onStop() {
         sensorManager.unregisterListener(sensorListener);
 
@@ -89,12 +74,10 @@ public class Game_activity2 extends Activity {
                 onShake();
                 i += 1;
                 tv.setText("" + i);
-
             }
         }
 
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        }
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {}
     };
 
 
@@ -134,10 +117,21 @@ public class Game_activity2 extends Activity {
                 finish();
             }
         }.start();
-
     }
 
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    protected void onResume() {
+        super.onResume();
+
+        sensorManager.registerListener(
+                sensorListener,
+                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL);
+        if (mSettings.contains("SP_SHAKE_SENSIVITY")) {
+            SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20);
+        }
     }
 }

@@ -23,7 +23,7 @@ import android.widget.Toast;
 
 public class SettingsActivity extends Activity {
 
-    public int SHAKE_SENSIVITY_SETTING = 25,SHAKE_SENSIVITY;
+    public int SHAKE_SENSIVITY_SETTING = 25, SHAKE_SENSIVITY;
     public boolean check = true;
     Vibrator vibro;
     int shakes = 0;
@@ -35,8 +35,9 @@ public class SettingsActivity extends Activity {
     Animation shaking;
 
     ///////////////SHARED PREFERENCE/////////////
+    public boolean firstLaunch;
     public static final String APP_PREFERENCES = "My Settings";
-    public static String SP_SHAKE_SENSIVITY = "";
+    public static String SP_SHAKE_SENSIVITY = "", SP_FIRST_LAUNCH = "";
     SharedPreferences mSettings;
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -45,12 +46,12 @@ public class SettingsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        Toast.makeText(getApplicationContext(),"Activity has loaded",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Activity has loaded", Toast.LENGTH_SHORT).show();
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
-            pict = (ImageView) findViewById(R.id.pic);
-            shaking = AnimationUtils.loadAnimation(this,R.anim.shake);
+        pict = (ImageView) findViewById(R.id.pic);
+        shaking = AnimationUtils.loadAnimation(this, R.anim.shake);
 
         mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);//
     }
@@ -66,7 +67,8 @@ public class SettingsActivity extends Activity {
                     } else {
                         check = false;
                         SHAKE_SENSIVITY = SHAKE_SENSIVITY_SETTING;
-                        strSensivity = ""+SHAKE_SENSIVITY;
+                        strSensivity = "" + SHAKE_SENSIVITY;
+                        firstLaunch = false;
                         //vibro.vibrate(500);
                         AlertDialog.Builder NEKIT_LOHUDRA = new AlertDialog.Builder(SettingsActivity.this);
                         NEKIT_LOHUDRA.setTitle("Done")
@@ -86,23 +88,22 @@ public class SettingsActivity extends Activity {
                     }
                 }
 
-        }
-        @Override
-        public void onFinish () {
+            }
 
-        }
+            @Override
+            public void onFinish() {
+
+            }
+        };
+        cdt.start();
     }
 
-    ;
-    cdt.start();
-}
 
-
-    public void btn_start_set_Click(View v){
+    public void btn_start_set_Click(View v) {
         Timer();
         Toast.makeText(getApplicationContext(), "Start Shaking", Toast.LENGTH_SHORT).show();
         SharedPreferences.Editor editor = mSettings.edit();
-        editor.putString(SP_SHAKE_SENSIVITY, strSensivity);
+        editor.putString("SP_SHAKE_SENSIVITY", strSensivity);
         editor.apply();
         pict.startAnimation(shaking);
 
@@ -115,11 +116,12 @@ public class SettingsActivity extends Activity {
             float y = sensorEvent.values[1];
             float z = sensorEvent.values[2];
             accelPrevious = accel;
-            accel  =(float) Math.sqrt((double)( x*x + y*y + z*z));
-            if (accel - accelPrevious > SHAKE_SENSIVITY_SETTING){
-                shakes +=1;
+            accel = (float) Math.sqrt((double) (x * x + y * y + z * z));
+            if (accel - accelPrevious > SHAKE_SENSIVITY_SETTING) {
+                shakes += 1;
             }
         }
+
         @Override
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
@@ -127,20 +129,24 @@ public class SettingsActivity extends Activity {
     };
 
 
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         SharedPreferences.Editor editor = mSettings.edit();
-        editor.putString(SP_SHAKE_SENSIVITY, strSensivity);
+        editor.putInt("SP_SHAKE_SENSIVITY", SHAKE_SENSIVITY);
+        //editor.apply();
+        editor.putBoolean("SP_FIRST_LAUNCH", firstLaunch);
         editor.apply();
     }
+
     protected void onResume() {
         super.onResume();
-        try{
-        if (mSettings.contains(SP_SHAKE_SENSIVITY)) {
+
+        if (mSettings.contains("SP_SHAKE_SENSIVITY")) {
             //TextView tv = (TextView)findViewById(R.id.tv_title_settings);
-            SHAKE_SENSIVITY = Integer.parseInt(mSettings.getString(SP_SHAKE_SENSIVITY, ""));
+            SHAKE_SENSIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20);
+
+
         }
-        }catch(Exception e){}
-    }
 
     }
+}
