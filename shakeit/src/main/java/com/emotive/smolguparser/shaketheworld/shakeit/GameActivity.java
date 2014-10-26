@@ -29,9 +29,8 @@ public class GameActivity extends Activity {
     public int i;
 
     int SHAKE_SENSITIVITY=20;
-    double gameF = 0;
-    double maxForse = 0;
-    double timeFG;
+    public int savedStaminaShakes=0;
+
 
     private SensorManager sensorManager;
     private float accel = SensorManager.GRAVITY_EARTH;
@@ -104,12 +103,9 @@ public class GameActivity extends Activity {
                 TextView tv = (TextView) findViewById(R.id.count);
                 Intent finish = new Intent(getApplicationContext(), FInishActivity.class);
                 finish.putExtra("count", tv.getText().toString());
-                finish.putExtra("gameF", gameF);
-                finish.putExtra("max_force", maxForse);
-                finish.putExtra("time", timeFG);
                 startActivity(finish);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
+            if (i<savedStaminaShakes){i=savedStaminaShakes;}
             }
         });
     }
@@ -123,8 +119,10 @@ public class GameActivity extends Activity {
             SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20); }
         if (mSettings.contains("SP_all_games")){
             statAct.all_games = mSettings.getInt("SP_all_games", 0); }
-        if(mSettings.contains("SP_all_shakes")){
+        if (mSettings.contains("SP_all_shakes")){
             statAct.all_shakes = mSettings.getInt("SP_all_shakes",0); }
+        if (mSettings.contains("SP_stamina")){
+            savedStaminaShakes = mSettings.getInt("SP_stamina",0); }
     }
     protected void onPause(){
         super.onPause();
@@ -133,6 +131,7 @@ public class GameActivity extends Activity {
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putInt("SP_all_shakes", statAct.all_shakes);
         editor.putInt("SP_all_games",statAct.all_games);
+        editor.putInt("SP_stamina", i);
         editor.apply();
     }
 }

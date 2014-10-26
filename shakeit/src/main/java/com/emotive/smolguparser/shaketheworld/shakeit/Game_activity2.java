@@ -20,7 +20,7 @@ public class Game_activity2 extends Activity {
 
     private static final String TAG = "ShakeActivity";
     private static int SHAKE_SENSITIVITY ;
-    public int i;
+    public int i, savedTime=0;
     public int j = 5;
 
     private SensorManager sensorManager;
@@ -110,6 +110,7 @@ public class Game_activity2 extends Activity {
                 finish.putExtra("count", tv.getText().toString());
                 startActivity(finish);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                if (i<savedTime){i=savedTime;}
                 finish();
             }
         }.start();
@@ -132,6 +133,8 @@ public class Game_activity2 extends Activity {
             statAct.all_games = mSettings.getInt("SP_all_games", 0); }
         if(mSettings.contains("SP_all_shakes")){
             statAct.all_shakes = mSettings.getInt("SP_all_shakes",0); }
+        if (mSettings.contains("SP_time")){
+            savedTime = mSettings.getInt("SP_time",0); }
     }
     protected void onPause(){
         super.onPause();
@@ -140,6 +143,7 @@ public class Game_activity2 extends Activity {
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putInt("SP_all_shakes", statAct.all_shakes);
         editor.putInt("SP_all_games",statAct.all_games);
+        editor.putInt("SP_time",i);
         editor.apply();
     }
 }

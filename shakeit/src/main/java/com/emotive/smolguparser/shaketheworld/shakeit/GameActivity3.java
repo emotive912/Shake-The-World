@@ -21,7 +21,7 @@ public class GameActivity3 extends Activity {
 
     private static final String TAG = "ShakeActivity";
     private static int SHAKE_SENSITIVITY;
-    public int i = 100, k = 0,t=0;
+    public int i = 100, k = 0,t=0,savedSpeed;
 
     private Timer myTimer;
     private SensorManager sensorManager;
@@ -107,6 +107,7 @@ public class GameActivity3 extends Activity {
         intent.putExtra("count", tv.getText().toString());
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        if(k>savedSpeed){k=savedSpeed;}
     }
 
     public void onBackPressed() {
@@ -121,14 +122,13 @@ public class GameActivity3 extends Activity {
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
         if (mSettings.contains("SP_SHAKE_SENSIVITY")) {
-            SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20);
-        }
+            SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20); }
         if (mSettings.contains("SP_all_games")) {
-            statAct.all_games = mSettings.getInt("SP_all_games", 0);
-        }
+            statAct.all_games = mSettings.getInt("SP_all_games", 0); }
         if (mSettings.contains("SP_all_shakes")) {
-            statAct.all_shakes = mSettings.getInt("SP_all_shakes", 0);
-        }
+            statAct.all_shakes = mSettings.getInt("SP_all_shakes", 0); }
+        if (mSettings.contains("SP_speed")){
+            savedSpeed = mSettings.getInt("SP_speed",999); }
     }
 
     protected void onStop() {
@@ -143,6 +143,7 @@ public class GameActivity3 extends Activity {
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putInt("SP_all_shakes", statAct.all_shakes);
         editor.putInt("SP_all_games", statAct.all_games);
+        editor.putInt("SP_speed",k);
         editor.apply();
     }
 }

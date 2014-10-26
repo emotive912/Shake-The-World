@@ -35,6 +35,9 @@ public class SettingsActivity extends Activity {
     Animation shaking;
 
     StatisticActivity statAct = new StatisticActivity();
+    GameActivity gameAct = new GameActivity();
+    Game_activity2 gameAct2 = new Game_activity2();
+    GameActivity3 gameAct3 = new GameActivity3();
 //////////////////////////////////SHARED PREFERENCE////////////////////////////////////
     public boolean firstLaunch;
     public static final String APP_PREFERENCES = "My Settings";
@@ -133,6 +136,9 @@ public class SettingsActivity extends Activity {
         if(!mSettings.contains("SP_all_shakes") && !mSettings.contains("SP_all_games")){
         editor.putInt("SP_all_shakes", statAct.all_shakes);
         editor.putInt("SP_all_games", statAct.all_games);
+        editor.putInt("SP_stamina",gameAct.savedStaminaShakes);
+        editor.putInt("SP_time",gameAct2.savedTime);
+        editor.putInt("SP_speed",gameAct3.savedSpeed);
         }
         editor.apply();
     }
