@@ -116,11 +116,11 @@
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
         android:textSize="20sp"
-        android:layout_below="@id/BestTime"
-        android:layout_alignRight="@+id/tv_BestTime_Number"
-        android:layout_alignEnd="@+id/tv_BestTime_Number"
-        android:layout_alignLeft="@+id/tv_Speed_Number"
-        android:layout_alignStart="@+id/tv_Speed_Number" />
+        android:layout_toEndOf="@+id/BestStamina"
+        android:layout_alignBottom="@+id/tv_Speed_Number"
+        android:layout_below="@+id/tv_BestTime_Number"
+        android:layout_alignLeft="@+id/tv_BestTime_Number"
+        android:layout_alignStart="@+id/tv_BestTime_Number" />
 
     <TextView
         android:id="@+id/Time_mode"
