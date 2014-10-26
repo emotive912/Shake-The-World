@@ -93,6 +93,6 @@ TextView tvPlayedGames,tvAllSHakes;
             tvPlayedGames.setText(""+mSettings.getInt("SP_all_games",0));}
         if(mSettings.contains("SP_all_shakes")){
             tvAllSHakes.setText(""+mSettings.getInt("SP_all_shakes",0));}
-
     }
+
 }

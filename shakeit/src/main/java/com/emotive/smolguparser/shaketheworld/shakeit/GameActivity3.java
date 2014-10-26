@@ -20,8 +20,8 @@ import android.widget.TextView;
 public class GameActivity3 extends Activity {
 
     private static final String TAG = "ShakeActivity";
-    private static  int SHAKE_SENSITIVITY ;
-    public int i = 100, k = 0;
+    private static int SHAKE_SENSITIVITY;
+    public int i = 100, k = 0,t=0;
 
     private Timer myTimer;
     private SensorManager sensorManager;
@@ -31,6 +31,7 @@ public class GameActivity3 extends Activity {
     ///////////////SHARED PREFERENCE/////////////
     public static final String APP_PREFERENCES = "My Settings";
     SharedPreferences mSettings;
+    StatisticActivity statAct = new StatisticActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +88,7 @@ public class GameActivity3 extends Activity {
                 TextView tv = (TextView) findViewById(R.id.count);
 
                 onShake();
-                i -= 1;
+                i -= 1;t+=1;
                 tv.setText("" + i);
 
                 if (i == 0) {
@@ -96,7 +97,8 @@ public class GameActivity3 extends Activity {
             }
         }
 
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {}
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
     };
 
     protected void onFinish() {
@@ -118,13 +120,29 @@ public class GameActivity3 extends Activity {
                 sensorListener,
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
-
         if (mSettings.contains("SP_SHAKE_SENSIVITY")) {
             SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20);
         }
+        if (mSettings.contains("SP_all_games")) {
+            statAct.all_games = mSettings.getInt("SP_all_games", 0);
+        }
+        if (mSettings.contains("SP_all_shakes")) {
+            statAct.all_shakes = mSettings.getInt("SP_all_shakes", 0);
+        }
     }
+
     protected void onStop() {
         sensorManager.unregisterListener(sensorListener);
         super.onStop();
+    }
+
+    protected void onPause() {
+        super.onPause();
+        statAct.all_shakes += t;
+        statAct.all_games += 1;
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putInt("SP_all_shakes", statAct.all_shakes);
+        editor.putInt("SP_all_games", statAct.all_games);
+        editor.apply();
     }
 }

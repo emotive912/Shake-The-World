@@ -31,6 +31,7 @@ public class Game_activity2 extends Activity {
     public static final String APP_PREFERENCES = "My Settings";
     SharedPreferences mSettings;
 ////////////////////////////////////////////////////////////////////////////////////////
+    StatisticActivity statAct = new StatisticActivity();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -126,7 +127,19 @@ public class Game_activity2 extends Activity {
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
         if (mSettings.contains("SP_SHAKE_SENSIVITY")) {
-            SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20);
-        }
+            SHAKE_SENSITIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20); }
+        if (mSettings.contains("SP_all_games")){
+            statAct.all_games = mSettings.getInt("SP_all_games", 0); }
+        if(mSettings.contains("SP_all_shakes")){
+            statAct.all_shakes = mSettings.getInt("SP_all_shakes",0); }
+    }
+    protected void onPause(){
+        super.onPause();
+        statAct.all_shakes+=i;
+        statAct.all_games+=1;
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putInt("SP_all_shakes", statAct.all_shakes);
+        editor.putInt("SP_all_games",statAct.all_games);
+        editor.apply();
     }
 }
