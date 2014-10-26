@@ -30,7 +30,6 @@ public class GameActivity3 extends Activity {
 
     ///////////////SHARED PREFERENCE/////////////
     public static final String APP_PREFERENCES = "My Settings";
-   // public static String SP_SHAKE_SENSIVITY = "";
     SharedPreferences mSettings;
 
 

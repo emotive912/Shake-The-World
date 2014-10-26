@@ -37,7 +37,6 @@ public class SettingsActivity extends Activity {
     ///////////////SHARED PREFERENCE/////////////
     public boolean firstLaunch;
     public static final String APP_PREFERENCES = "My Settings";
-    public static String SP_SHAKE_SENSIVITY = "", SP_FIRST_LAUNCH = "";
     SharedPreferences mSettings;
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,13 +62,13 @@ public class SettingsActivity extends Activity {
                 if (check) {
                     if (shakes < 10) {
                         SHAKE_SENSIVITY_SETTING -= 1;
-
                     } else {
                         check = false;
                         SHAKE_SENSIVITY = SHAKE_SENSIVITY_SETTING;
                         strSensivity = "" + SHAKE_SENSIVITY;
                         firstLaunch = false;
                         //vibro.vibrate(500);
+
                         AlertDialog.Builder NEKIT_LOHUDRA = new AlertDialog.Builder(SettingsActivity.this);
                         NEKIT_LOHUDRA.setTitle("Done")
                                 .setMessage("Calibration has ended.")
@@ -92,7 +91,10 @@ public class SettingsActivity extends Activity {
 
             @Override
             public void onFinish() {
-
+                check = false;
+                SHAKE_SENSIVITY = SHAKE_SENSIVITY_SETTING;
+                strSensivity = "" + SHAKE_SENSIVITY;
+                firstLaunch = false;
             }
         };
         cdt.start();

@@ -21,7 +21,6 @@ public class SplashActivity extends Activity {
 
     ///////////////SHARED PREFERENCE/////////////
     public static final String APP_PREFERENCES = "My Settings";
-  //  public static String SP_FIRST_LAUNCH = "";
     SharedPreferences mSettings;
 ////////////////////////////////////////////////////////////////////////////////////////
 
