@@ -21,7 +21,7 @@ public class GameActivity3 extends Activity {
 
     private static final String TAG = "ShakeActivity";
     private static int SHAKE_SENSITIVITY;
-    public int i = 100, k = 0,t=0,savedSpeed;
+    public int i = 100, k = 0,t=0,savedSpeed=999;
 
     private Timer myTimer;
     private SensorManager sensorManager;
