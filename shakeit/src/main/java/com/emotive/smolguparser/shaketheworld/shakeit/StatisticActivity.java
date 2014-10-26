@@ -84,9 +84,9 @@ TextView tvPlayedGames,tvAllSHakes,tvStamina,tvTime,tvSpeed;
         if(mSettings.contains("SP_stamina")){
             tvStamina.setText(""+mSettings.getInt("SP_stamina",0));}
         if(mSettings.contains("SP_time")){
-            tvTime.setText(""+mSettings.getInt("SP_time",0));}
+            tvSpeed.setText(""+mSettings.getInt("SP_time",0));}
         if(mSettings.contains("SP_speed")){
-            tvSpeed.setText(""+mSettings.getInt("SP_speed",999));}
+            tvTime.setText(""+mSettings.getInt("SP_speed",999));}
     }
 
 }
