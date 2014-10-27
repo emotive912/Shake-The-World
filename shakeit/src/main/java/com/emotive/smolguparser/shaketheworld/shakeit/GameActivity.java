@@ -91,9 +91,7 @@ public class GameActivity extends Activity {
         }
     };
 
-    public void onBackPressed() {
-
-    }
+    public void onBackPressed() {}
 
     public void goStp() {
         Button btn_stop = (Button) findViewById(R.id.button_stop);

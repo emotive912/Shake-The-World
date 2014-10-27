@@ -118,9 +118,7 @@ public class Game_activity2 extends Activity {
         }.start();
     }
 
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
+    public void onBackPressed() {}
 
     protected void onResume() {
         super.onResume();

@@ -114,8 +114,7 @@ public class GameActivity3 extends Activity {
         finish();
     }
 
-    public void onBackPressed() {
-    }
+    public void onBackPressed() {}
 
     protected void onResume() {
         super.onResume();
