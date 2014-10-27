@@ -63,6 +63,17 @@
         android:fontFamily="sans-serif-condensed"
         android:textSize="27sp"
         android:gravity="center" />
+    <Button
+        android:id="@+id/button_stop"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/stop_button"
+        android:gravity="center"
+        android:layout_below="@+id/textView2"
+        android:onClick="Stop_Click"
+        android:background="@drawable/pic"
+        android:fontFamily="sans-serif-condensed" />
 
 
 </RelativeLayout>

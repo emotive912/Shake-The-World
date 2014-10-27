@@ -13,6 +13,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 
@@ -107,11 +108,13 @@ public class GameActivity3 extends Activity {
         intent.putExtra("count", tv.getText().toString());
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        if(k>savedSpeed){k=savedSpeed;}
+        if(i<1){if(k>savedSpeed){k=savedSpeed;}}
+        statAct.all_shakes += t;
+        statAct.all_games += 1;
+        finish();
     }
 
     public void onBackPressed() {
-        super.onBackPressed();
     }
 
     protected void onResume() {
@@ -138,12 +141,16 @@ public class GameActivity3 extends Activity {
 
     protected void onPause() {
         super.onPause();
-        statAct.all_shakes += t;
-        statAct.all_games += 1;
+
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putInt("SP_all_shakes", statAct.all_shakes);
         editor.putInt("SP_all_games", statAct.all_games);
-        editor.putInt("SP_speed",k);
+        if (i<1)editor.putInt("SP_speed",k);
         editor.apply();
+    }
+
+    public void Stop_Click(View v){
+        Intent intent = new Intent(getApplicationContext(), StartScreen.class);
+        startActivity(intent);finish();
     }
 }

@@ -111,6 +111,8 @@ public class Game_activity2 extends Activity {
                 startActivity(finish);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 if (i<savedTime){i=savedTime;}
+                statAct.all_shakes+=i;
+                statAct.all_games+=1;
                 finish();
             }
         }.start();
@@ -138,12 +140,14 @@ public class Game_activity2 extends Activity {
     }
     protected void onPause(){
         super.onPause();
-        statAct.all_shakes+=i;
-        statAct.all_games+=1;
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putInt("SP_all_shakes", statAct.all_shakes);
         editor.putInt("SP_all_games",statAct.all_games);
         editor.putInt("SP_time",i);
         editor.apply();
+    }
+    public void Stop_Click(View v){
+        Intent intent = new Intent(getApplicationContext(), StartScreen.class);
+        startActivity(intent);finish();
     }
 }

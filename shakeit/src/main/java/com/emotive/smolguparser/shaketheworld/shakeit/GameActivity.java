@@ -91,7 +91,9 @@ public class GameActivity extends Activity {
         }
     };
 
-    public void onBackPressed() {}
+    public void onBackPressed() {
+
+    }
 
     public void goStp() {
         Button btn_stop = (Button) findViewById(R.id.button_stop);
@@ -106,6 +108,8 @@ public class GameActivity extends Activity {
                 startActivity(finish);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             if (i<savedStaminaShakes){i=savedStaminaShakes;}
+                statAct.all_shakes+=i;
+                statAct.all_games+=1;
             }
         });
     }
@@ -126,8 +130,6 @@ public class GameActivity extends Activity {
     }
     protected void onPause(){
         super.onPause();
-        statAct.all_shakes+=i;
-        statAct.all_games+=1;
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putInt("SP_all_shakes", statAct.all_shakes);
         editor.putInt("SP_all_games",statAct.all_games);
