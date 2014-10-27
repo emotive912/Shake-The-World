@@ -53,6 +53,8 @@
     <string name="best_time_in_speed">Лучшее время(Режим "Скорость")</string>
     <string name="shakes_timemode">Shakes(Режим "Время")</string>
     <string name="stamina_endurance">Выносливость\n(Режим "Выносливость")</string>
+    <string name="hello_world">Привет Мир!</string>
+    <string name="start_shake">Начинайте трясти</string>
 
 
 </resources>
