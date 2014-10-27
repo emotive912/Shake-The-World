@@ -149,4 +149,4 @@ public class SettingsActivity extends Activity {
             SHAKE_SENSIVITY = mSettings.getInt("SP_SHAKE_SENSIVITY", 20);
         }
     }
-}
+}//некит лохудра
