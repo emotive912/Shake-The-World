@@ -6,8 +6,7 @@
         android:allowBackup="true"
         android:icon="@drawable/icon_for_app"
         android:label="@string/shake_the_world"
-        android:theme="@style/AppTheme"
-        android:debuggable="false">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".SplashActivity"
             android:label="@string/shake_the_world"

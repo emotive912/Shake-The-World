@@ -9,17 +9,16 @@
 
     <TextView
         android:id="@+id/entry_title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/shake_the_world"
         android:textSize="40sp"
         android:textStyle="bold"
         android:gravity="center"
         android:textColor="@color/black_color"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_above="@+id/Shaker_pic"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:fontFamily="sans-serif-condensed" />
 
 
     <ImageView
@@ -27,7 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/entry_title"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
