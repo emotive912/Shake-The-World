@@ -20,17 +20,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Timer;
+import java.util.TimerTask;
 
 /////////////ВЫНОСЛИВОСТЬ -> КОЛИЧЕСТВО ШЕЙКОВ/////////////
 
 public class GameActivity extends Activity {
     private static final String TAG = "ShakeActivity";
 
-    public int i;
+    public int i,t=0;
 
     int SHAKE_SENSITIVITY=20;
     public int savedStaminaShakes=0;
 
+    Timer myTimer;
 
     private SensorManager sensorManager;
     private float accel = SensorManager.GRAVITY_EARTH;
@@ -80,7 +82,7 @@ public class GameActivity extends Activity {
             if (accel - accelPrevious > SHAKE_SENSITIVITY) {
 
                 TextView tv = (TextView) findViewById(R.id.count);
-
+                t=0;
                 onShake();
                 i += 1;
                 tv.setText("" + i);
@@ -93,6 +95,16 @@ public class GameActivity extends Activity {
 
     public void onBackPressed() {}
 
+    public void stop(){
+        TextView tv = (TextView) findViewById(R.id.count);
+        Intent finish = new Intent(getApplicationContext(), FInishActivity.class);
+        finish.putExtra("count", tv.getText().toString());
+        startActivity(finish);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        if (i<savedStaminaShakes){i=savedStaminaShakes;}
+        statAct.all_shakes+=i;
+        statAct.all_games+=1;
+    }
     public void goStp() {
         Button btn_stop = (Button) findViewById(R.id.button_stop);
         btn_stop.setOnClickListener(new View.OnClickListener() {
@@ -100,14 +112,7 @@ public class GameActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                TextView tv = (TextView) findViewById(R.id.count);
-                Intent finish = new Intent(getApplicationContext(), FInishActivity.class);
-                finish.putExtra("count", tv.getText().toString());
-                startActivity(finish);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-            if (i<savedStaminaShakes){i=savedStaminaShakes;}
-                statAct.all_shakes+=i;
-                statAct.all_games+=1;
+                stop();
             }
         });
     }
@@ -134,4 +139,25 @@ public class GameActivity extends Activity {
         editor.putInt("SP_stamina", i);
         editor.apply();
     }
+    protected void onStart(){
+        super.onStart();
+        myTimer = new Timer();
+        myTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                TimerMethod();
+            }
+        },0,500);
+    }
+    private void TimerMethod(){
+        t+=1;
+        if(t==9){stop();}
+        this.runOnUiThread(Timer_Tick);
+    }
+    private Runnable Timer_Tick = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    };
 }
