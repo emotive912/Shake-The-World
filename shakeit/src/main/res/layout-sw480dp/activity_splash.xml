@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/shake_the_world"
-        android:textSize="40sp"
+        android:textSize="60sp"
         android:textStyle="bold"
         android:gravity="center"
         android:textColor="@color/black_color"
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="100dp"
         android:layout_below="@+id/entry_title"
         android:layout_centerHorizontal="true" />
 

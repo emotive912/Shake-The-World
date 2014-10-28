@@ -13,22 +13,22 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:text="@string/choosing_game_mode"
         android:textColor="@color/black_color"
-        android:textSize="35sp"
+        android:textSize="50sp"
         android:fontFamily="sans-serif-condensed"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/mode3"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_below="@+id/choosing_mode"
         android:background="@drawable/pic"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="120dp"
         android:gravity="center"
         android:text="@string/endurance"
         android:textSize="25sp"
@@ -36,8 +36,8 @@
 
     <Button
         android:id="@+id/mode2"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
         android:layout_below="@+id/mode3"
         android:layout_centerHorizontal="true"
         android:background="@drawable/pic"
@@ -49,8 +49,8 @@
 
     <Button
         android:id="@+id/mode1"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/mode2"
         android:background="@drawable/pic"

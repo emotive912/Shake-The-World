@@ -14,7 +14,7 @@
         android:gravity="center"
         android:text="@string/statistic"
         android:textColor="@color/black_color"
-        android:textSize="40sp"
+        android:textSize="60sp"
         android:layout_marginTop="50dp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed" />
@@ -28,7 +28,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_margin="20dp"
         android:layout_below="@+id/labl_stat"
  />
@@ -41,7 +41,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_toRightOf="@id/playedGamas"
         android:layout_below="@id/labl_stat"
         android:layout_margin="20dp"/>
@@ -53,7 +53,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/playedGamas"/>
 
@@ -65,7 +65,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_toRightOf="@id/AllShakes"
         android:layout_below="@id/playedGamas"
         android:layout_marginLeft="20dp"/>
@@ -78,7 +78,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_margin="20dp"
         android:layout_below="@+id/AllShakes"/>
 
@@ -90,7 +90,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_toRightOf="@id/BestTime"
         android:layout_below="@id/AllShakes"
         android:layout_margin="20dp"/>
@@ -103,7 +103,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/BestTime"/>
 
@@ -115,7 +115,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_alignBottom="@+id/tv_Speed_Number"
         android:layout_below="@+id/tv_BestTime_Number"
         android:layout_alignLeft="@+id/tv_BestTime_Number"
@@ -129,7 +129,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_margin="20dp"
         android:layout_below="@+id/BestStamina"/>
 
@@ -141,7 +141,7 @@
         android:textColor="@color/black_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:layout_toRightOf="@id/Time_mode"
         android:layout_below="@id/BestStamina"
         android:layout_margin="20dp"/>
@@ -149,12 +149,12 @@
 
     <Button
         android:id="@+id/menu"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
         android:text="@string/main_menu"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="70dp"
+        android:layout_margin="30dp"
         android:background="@drawable/cloud"
+        android:layout_below="@+id/Time_mode"
         android:fontFamily="sans-serif-condensed"
         android:textSize="25sp"
         android:layout_centerHorizontal="true" />

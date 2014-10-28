@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="shake_the_world">Shake The World</string>
+    <string name="shake_the_world">Shake your World</string>
     <string name="shake">Shake</string>
     <string name="statistic">Statistic</string>
     <string name="single">One</string>
