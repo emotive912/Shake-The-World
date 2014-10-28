@@ -73,8 +73,8 @@
     </uses-permission>
 
     <supports-screens
-        android:anyDensity="true"
         android:largeScreens="false"
+        android:xlargeScreens="false"
         android:normalScreens="true"
         android:resizeable="true"
         android:smallScreens="true" />

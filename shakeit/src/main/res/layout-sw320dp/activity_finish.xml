@@ -17,7 +17,6 @@
         android:textColor="@color/black_color"
         android:textSize="40sp"
         android:layout_marginTop="45dp"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed" />
@@ -27,11 +26,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="TextView"
+        android:text="0"
         android:textColor="@color/black_color"
         android:textSize="60sp"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed" />
 
@@ -45,8 +45,8 @@
         android:textSize="25sp"
         android:background="@drawable/pic"
         android:layout_below="@+id/buttonToStat"
-        android:layout_alignLeft="@+id/buttonToStat"
-        android:layout_alignStart="@+id/buttonToStat"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
         android:fontFamily="sans-serif-condensed" />
 
     <Button

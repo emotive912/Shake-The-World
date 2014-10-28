@@ -45,6 +45,7 @@
 
     <ImageView
         android:id="@+id/pic"
+        android:layout_marginTop="20dp"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/icon"
