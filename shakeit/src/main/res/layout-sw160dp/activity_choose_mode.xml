@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center"
+    tools:ignore="MergeRootFrame">
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/choosing_game_mode"
+        android:textColor="@color/black_color"
+        android:textSize="40sp"
+        android:layout_above="@+id/btnSinglePlayer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="43dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnSinglePlayer"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/pic"
+        android:gravity="center"
+        android:text="@string/single"
+        android:textSize="25sp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/btnMultiPlayer"
+        android:layout_alignStart="@+id/btnMultiPlayer"
+        android:fontFamily="sans-serif-condensed" />
+
+    <Button
+        android:id="@+id/btnMultiPlayer"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/pic"
+        android:gravity="center"
+        android:text="@string/multi"
+        android:textSize="25sp"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/btnSinglePlayer"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed" />
+
+
+</RelativeLayout>
+

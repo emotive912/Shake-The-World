@@ -1,0 +1,165 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.shakeit.StatisticActivity"
+    tools:ignore="MergeRootFrame">
+
+    <TextView
+        android:id="@+id/labl_stat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/statistic"
+        android:textColor="@color/black_color"
+        android:textSize="40sp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/played_games"
+        android:id="@+id/playedGamas"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/labl_stat"
+ />
+
+    <TextView
+        android:id="@+id/tv_PlayedGames_Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/playedGamas"
+        android:layout_below="@id/labl_stat"
+        android:layout_margin="20dp"/>
+    <TextView
+        android:id="@+id/AllShakes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shakeov"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/playedGamas"/>
+
+    <TextView
+        android:id="@+id/tv_AllShakes_Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/AllShakes"
+        android:layout_below="@id/playedGamas"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/BestTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/best_time_in_speed"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/AllShakes"/>
+
+    <TextView
+        android:id="@+id/tv_BestTime_Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/BestTime"
+        android:layout_below="@id/AllShakes"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/BestStamina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stamina_endurance"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/BestTime"/>
+
+    <TextView
+        android:id="@+id/tv_BestStamina_Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:layout_alignBottom="@+id/tv_Speed_Number"
+        android:layout_below="@+id/tv_BestTime_Number"
+        android:layout_alignLeft="@+id/tv_BestTime_Number"
+        android:layout_alignStart="@+id/tv_BestTime_Number" />
+
+    <TextView
+        android:id="@+id/Time_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shakes_timemode"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/BestStamina"/>
+
+    <TextView
+        android:id="@+id/tv_Speed_Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/Time_mode"
+        android:layout_below="@id/BestStamina"
+        android:layout_margin="20dp"/>
+
+
+    <Button
+        android:id="@+id/menu"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="@string/main_menu"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="70dp"
+        android:background="@drawable/cloud"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true" />
+
+
+
+
+</RelativeLayout>
