@@ -45,12 +45,25 @@
 
     <ImageView
         android:id="@+id/pic"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:src="@drawable/icon"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/btnToCalibrate"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:layout_centerHorizontal="true"
+        android:textSize="35sp"
+        android:layout_below="@+id/pic"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:textColor="@color/black_color"/>
 
 </RelativeLayout>

@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -33,6 +34,7 @@ public class SettingsActivity extends Activity {
     private float accelPrevious = SensorManager.GRAVITY_EARTH;
     ImageView pict;
     Animation shaking;
+    TextView tv_Time;
 
     StatisticActivity statAct = new StatisticActivity();
     GameActivity gameAct = new GameActivity();
@@ -48,7 +50,7 @@ public class SettingsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-
+        tv_Time = (TextView)findViewById(R.id.tv_time);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
@@ -65,6 +67,7 @@ public class SettingsActivity extends Activity {
                 if (check) {
                     if (shakes < 10) {
                         SHAKE_SENSIVITY_SETTING -= 1;
+                        tv_Time.setText("Осталось времени: "+SHAKE_SENSIVITY_SETTING);
                     } else {
                         check = false;
                         SHAKE_SENSIVITY = SHAKE_SENSIVITY_SETTING;
