@@ -50,6 +50,7 @@ public class GameActivity extends Activity {
         setContentView(R.layout.activity_game);
         goStp();
 
+
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorManager.registerListener(
                 sensorListener,
@@ -157,7 +158,6 @@ public class GameActivity extends Activity {
     private Runnable Timer_Tick = new Runnable() {
         @Override
         public void run() {
-
         }
     };
 }
