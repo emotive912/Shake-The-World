@@ -77,7 +77,8 @@
         android:xlargeScreens="false"
         android:normalScreens="true"
         android:resizeable="true"
-        android:smallScreens="true" />
+        android:smallScreens="true" >
+    </supports-screens>
 
     <uses-sdk
         android:maxSdkVersion="21"

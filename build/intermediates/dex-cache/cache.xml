@@ -2,8 +2,8 @@
 <pre-dex-items>
 
     <item
-        dex="/Users/Ink1804/AndroidStudioProjects/Shake-The-World/shakeit/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-ee576f91b45a6538d4156fc6e674b6f65034f74e.jar"
-        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
+        dex="/Users/Ink1804/AndroidStudioProjects/Shake-The-World/shakeit/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-d4e13080d539bbbcee7f73bdf1c6bae9a6eb74c3.jar"
+        jar="/Users/Ink1804/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
